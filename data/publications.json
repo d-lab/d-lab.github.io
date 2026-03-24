@@ -1,0 +1,874 @@
+[
+  {
+    "year": 2026,
+    "publications": [
+      {
+        "citation": "Pietro Bernardelle, Leon Fröhling, Stefano Civelli, and Gianluca Demartini. SubData: Bridging Heterogeneous Datasets to Enable Theory-Driven Evaluation of Political and Demographic Perspectives in LLMs. In: 5th Workshop on Perspectivist Approaches to NLP (NLPerspectives 2026) at the 15th Language Resources and Evaluation Conference (LREC). Mallorca, Spain, May 2026."
+      },
+      {
+        "citation": "Amit Arjun Verma, Simran Setia, and Gianluca Demartini. Scalable Methods for Storing and Retrieving Wikipedia Revision Histories for Large-Scale Analysis. In: ACM Transactions on the Web (TWEB). 2026."
+      },
+      {
+        "citation": "Samaneh Mohtadi, and Gianluca Demartini. Query-Document Dense Vectors for LLM Relevance Judgment Bias Analysis. In: The 48th European Conference on Information Retrieval (ECIR 2026) - Findings. Delft, The Netherlands, March 2026."
+      },
+      {
+        "citation": "Samaneh Mohtadi, Kevin Roitero, Stefano Mizzaro, and Gianluca Demartini. The Effect of Document Summarization on LLM-based Relevance Judgments. In: The 48th European Conference on Information Retrieval (ECIR 2026) - Findings. Delft, The Netherlands, March 2026."
+      },
+      {
+        "citation": "Riccardo Zamolo, Riccardo Lunardi, Michael Soprano, Gianluca Demartini, Stefano Mizzaro, and Kevin Roitero. Large Language Models as Assessors: On the Impact of Relevance Scales. In: The 48th European Conference on Information Retrieval (ECIR 2026) - Short paper track. Delft, The Netherlands, March 2026."
+      },
+      {
+        "citation": "Shangqian Li, Tianwa Chen, and Gianluca Demartini. The Impact of AI Generated Content on Decision Making for Topics Requiring Expertise. In: Human Behavior and Emerging Technologies (HBET), Wiley.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1155/hbe2/3410621"
+      },
+      {
+        "citation": "Hongliang Ni, Tong Chen, Shazia Sadiq, and Gianluca Demartini. Denoising Pretrained Black-box Models via Amplitude-Guided Phase Realignment. In: Transactions on Machine Learning Research (TMLR)."
+      },
+      {
+        "citation": "Farid Ariai, Joel Mackenzie, and Gianluca Demartini. Natural language processing for the legal domain: A survey of tasks, datasets, models, and challenges. In: ACM Computing Surveys.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://dl.acm.org/doi/10.1145/3777009"
+      },
+      {
+        "citation": "Elyas Meguellati, Stefano Civelli, Shazia Sadiq, and Gianluca Demartini. APD: Ad Persuasion Dashboard - Insights into Facebook Political Campaign Strategies. In: 20th International AAAI Conference on Web and Social Media (ICWSM 2026) - Demo track. Los Angeles, California, USA, June 2026."
+      },
+      {
+        "citation": "Stefano Civelli, Pietro Bernardelle, Frank Mols, and Gianluca Demartini. Political Advertising on Facebook During the 2022 Australian Federal Election: A Social Identity Perspective. In: 20th International AAAI Conference on Web and Social Media (ICWSM 2026). Los Angeles, California, USA, June 2026."
+      },
+      {
+        "citation": "Elyas Meguellati, Stefano Civelli, Pietro Bernardelle, Shazia Sadiq, Irwin King, and Gianluca Demartini. Towards Detecting Persuasion on Social Media: From Model Development to Insights on Persuasion Strategies. In: 20th International AAAI Conference on Web and Social Media (ICWSM 2026). Los Angeles, California, USA, June 2026."
+      }
+    ]
+  },
+  {
+    "year": 2025,
+    "publications": [
+      {
+        "citation": "Hui Zhou, Tianwa Chen, Gianluca Demartini, Marta Indulska and Shazia Sadiq. \"We Don't Have Time Reading the Entire Document to Evaluate the Quality\" – The Role of Metadata in Quality Evaluation of Unstructured Textual Data. In: The 36th Australasian Conference on Information Systems (ACIS 2025). University of the Sunshine Coast, Australia, December 2025."
+      },
+      {
+        "citation": "Ang Li, Charles Perin, Gianluca Demartini, Stephen Viller, Jarrod Knibbe, and Maxime Cordeil. Running with Data: a Survey of the Current Research and a Design Exploration of Future Immersive Visualisations. In: The 2025 IEEE Visualization and Visual Analytics Conference (IEEE VIS). Vienna, Austria, November 2025."
+      },
+      {
+        "citation": "Gianluca Demartini, Stefano Mizzaro, Kevin Roitero, and Damiano Spina. On the Role of Information Retrieval When Teaching Artificial Intelligence: The What, the Why, and the How. In: The 2nd Workshop on Education for Artificial Intelligence at the 28th European Conference on Artificial Intelligence (ECAI) 2025. Bologna, Italy, October 2025."
+      },
+      {
+        "citation": "Leon Fröhling, Gianluca Demartini, Dennis Assenmacher. Personas with Attitudes: Controlling LLMs for Diverse Data Annotation. In: The 9th Workshop on Online Abuse and Harms (WOAH) at the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025). Vienna, Austria, August 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://aclanthology.org/2025.woah-1.43.pdf"
+      },
+      {
+        "citation": "Gianluca Demartini, Claudia Hauff, Matthew Lease, Stefano Mizzaro, Kevin Roitero, Mark Sanderson, Falk Scholer, Chirag Shah, Damiano Spina, Paul Thomas, Arjen P. de Vries, and Guido Zuccon. Preaching to the ChoIR: Lessons IR Should Share with AI. In: The 15th International Conference on Innovative Concepts and Theories in Information Retrieval (ICTIR). Padua, Italy, July 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://dx.doi.org/10.1145/3731120.3744612"
+      },
+      {
+        "citation": "Shangqian Li, Shaoyang Fan, and Gianluca Demartini. The Interaction Between Emotion Dynamics and Opinion Changes in the Era of Generative AI. In: Computers in Human Behavior Reports (CHB-R), Elsevier, June 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1016/j.chbr.2025.100722"
+      },
+      {
+        "citation": "Shangqian Li, Lei Han, and Gianluca Demartini. Provoking Critical Thinking: Using Counter-arguments in Online Discussion Summarisation. In: Information Processing & Management (IPM), Elsevier, June 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1016/j.ipm.2025.104258"
+      },
+      {
+        "citation": "Timo Spinde, Fei Wu, Wolfgang Gaissmaier, Gianluca Demartini, and Helge Giese. Enhancing Media Literacy: The Effectiveness of (Human) Annotations and Bias Visualizations on Bias Detection. In: Information Processing & Management (IPM), Elsevier, June 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1016/j.ipm.2025.104244"
+      },
+      {
+        "citation": "Elyas Meguellati, Assaad Zeghina, Shazia Sadiq, and Gianluca Demartini. LLM-based Semantic Augmentation for Harmful Content Detection. In: 19th International AAAI Conference on Web and Social Media (ICWSM 2025). Copenhagen, Denmark, June 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1609/icwsm.v19i1.35868"
+      },
+      {
+        "citation": "Nardiena A. Pratama, Shaoyang Fan, and Gianluca Demartini. Perception of Visual Content: Differences between Humans and Foundation Models. In: 19th International AAAI Conference on Web and Social Media (ICWSM 2025). Copenhagen, Denmark, June 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1609/icwsm.v19i1.35891"
+      },
+      {
+        "citation": "Tianwa Chen, Barbara Weber, Graeme Shanks, Gianluca Demartini, Marta Indulska and Shazia Sadiq. How Do Experts Make Sense of Integrated Process Models?. In: 37th International Conference on Advanced Information Systems Engineering (CAiSE 2025). Vienna, Austria, June 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/978-3-031-94571-7_1"
+      },
+      {
+        "citation": "Ang Li, Charles Perin, Jarrod Knibbe, Gianluca Demartini, Stephen Viller, and Maxime Cordeil. Embedded and Situated Visualisation in Mixed Reality to Support Interval Running. In: 27th Eurographics Conference on Visualization (EuroVis 2025). Luxembourg, June 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1111/cgf.70133"
+      },
+      {
+        "citation": "Gaole He, Gianluca Demartini, and Ujwal Gadiraju. Plan-Then-Execute: An Empirical Study of User Trust and Team Performance When Using LLM Agents As A Daily Assistant. In: ACM CHI 2025 Conference on Human Factors in Computing Systems (CHI 2025). Yokohama, Japan, April 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3706598.3713218"
+      },
+      {
+        "citation": "Pietro Bernardelle, Leon Fröhling, Stefano Civelli, Riccardo Lunardi, Kevin Roitero, and Gianluca Demartini. Mapping and Influencing the Political Ideology of Large Language Models using Synthetic Personas. In: The 2025 ACM Web Conference (TheWebConf 2025) - Short paper track. Sydney, Australia, April 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3701716.3715578"
+      },
+      {
+        "citation": "Junliang Yu, Jay Thai Duong Huynh, Shaoyang Fan, Gianluca Demartini, Tong Chen, Hongzhi Yin, and Shazia Sadiq. BiasNavi: LLM-Empowered Data Bias Management. In: The 2025 ACM Web Conference (TheWebConf 2025) - Demo track. Sydney, Australia, April 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3701716.3715169"
+      },
+      {
+        "citation": "Yahya Yunus, Tianwa Chen and Gianluca Demartini. Exploring Wikipedia Gender Diversity Over Time - The Wikipedia Gender Dashboard (WGD). In: The 2025 ACM Web Conference (TheWebConf 2025) - Demo track. Sydney, Australia, April 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3701716.3715175"
+      },
+      {
+        "citation": "Elyas Meguellati, Nardiena A. Pratama, Shazia Sadiq, and Gianluca Demartini. Are Large Language Models Good Data Preprocessors?. In: The Web of Data Quality Workshop at The 2025 ACM Web Conference (TheWebConf 2025). Sydney, Australia, April 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3701716.3717568"
+      },
+      {
+        "citation": "Stefano Civelli, Pietro Bernardelle, and Gianluca Demartini. The Impact of Persona-based Political Perspectives on Hateful Content Detection. In: The Workshop on Multimodal Content Analysis for Social Good (MM4SG) at The 2025 ACM Web Conference (TheWebConf 2025). Sydney, Australia, April 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3701716.3718383"
+      },
+      {
+        "citation": "Evgenia Christoforou, Gianluca Demartini, and Jahna Otterbacher. Crowd-Sourcing or AI-Sourcing? - The Impact of GenAI on Data Annotation Tasks. In: Communications of the ACM (CACM), Vol. 68, No. 4 April 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3706101"
+      },
+      {
+        "citation": "Hatim Lahza, Gianluca Demartini, Omid Noroozi, Dragan Gasevic, Shazia Sadiq, and Hassan Khosravi. Enhancing Peer Feedback Provision through User Interface Scaffolding: A Comparative Examination of Scripting and Self-Monitoring Techniques. In: Computers & Education, Elsevier. 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1016/j.compedu.2025.105260"
+      },
+      {
+        "citation": "Mads Skipanes, Gianluca Demartini, and Katrin Franke. Information Analysis in Criminal Investigations: Methods, Challenges, and Computational Opportunities Processing Unstructured Text. In: Policing: A Journal of Policy and Practice, Oxford University Press. 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1093/police/paaf005"
+      },
+      {
+        "citation": "Mads Skipanes, Nardiena Pratama, Kyle Porter and Gianluca Demartini. Fast Synthetic Data Generation for Case-Specific Entity Extraction in Criminal Investigations. In: Digital Forensics Doctoral Symposium (DFDS) co-located with The Digital Forensics Research Conference Europe (DFRWS EU 2025). Brno, Czech Republic, April 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3712716.3712719"
+      },
+      {
+        "citation": "Mads Skipanes, Tollef Emil Jørgensen, Kyle Porter, Gianluca Demartini, and Sule Yildirim Yayilgan. Enhancing Criminal Investigation Analysis with Summarization and Memory-based Retrieval-Augmented Generation: A Comprehensive Evaluation of Real Case Data. In: The 31st International Conference on Computational Linguistics (COLING 2025). Abu Dhabi, UAE, January 2025.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://aclanthology.org/2025.coling-main.334/"
+      }
+    ]
+  },
+  {
+    "year": 2024,
+    "publications": [
+      {
+        "citation": "Alejandro Sierra-Múnera, Linh Le, Gianluca Demartini, and Ralf Krestel. MELArt: A Multimodal Entity Linking Dataset for Art. In: Transactions on Graph Data and Knowledge (TGDK) Special Issue: Resources. December 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.4230/TGDK.2.2.8"
+      },
+      {
+        "citation": "Pietro Bernardelle and Gianluca Demartini. Optimizing LLMs with Direct Preferences: A Data Efficiency Perspective. In: The 2nd International ACM SIGIR Conference on Information Retrieval in the Asia Pacific (SIGIR-AP 2024). Tokyo, Japan, December 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3673791.3698411"
+      },
+      {
+        "citation": "Hrishi Patel, Tianwa Chen, Ivano Bongiovanni, and Gianluca Demartini. Estimating Gender Completeness in Wikipedia. In: The Australasian Conference on Information Systems (ACIS 2024). Canberra, Australia, December 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://aisel.aisnet.org/acis2024/99/"
+      },
+      {
+        "citation": "Hui Zhou, Gianluca Demartini, Marta Indulska, and Shazia Sadiq. Influence of Metadata on Quality Evaluation of Unstructured Information Artefacts. In: The Australasian Conference on Information Systems (ACIS 2024). Canberra, Australia, December 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://aisel.aisnet.org/acis2024/79/"
+      },
+      {
+        "citation": "Tong Chen, Danny Wang, Xurong Liang, Marten Risius, Gianluca Demartini, and Hongzhi Yin. Hate Speech Detection with Generalizable Topic-aware Fairness. In: The 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (ACM KDD'24). Barcelona, Spain, August 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3637528.3671821"
+      },
+      {
+        "citation": "Linh Le, Minh-Tien Nguyen, Khai Phan Tran, Genghong Zhao, Zhang Xia, Guido Zuccon, and Gianluca Demartini. Stochastic Featurization for Active Learning. In: The Second International Workshop on Trustworthy Artificial Intelligence for Healthcare (TAI4H) co-located with the 2024 International Joint Conference on Artificial Intelligence. Jeju, Korea, August 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/978-3-031-67751-9_5"
+      },
+      {
+        "citation": "Michael Soprano, Kevin Roitero, Ujwal Gadiraju, Eddy Maddalena, and Gianluca Demartini. Longitudinal Loyalty: Understanding The Barriers To Running Longitudinal Studies On Crowdsourcing Platforms. In: The ACM Transactions on Social Computing (ACM TSC). June 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3674884"
+      },
+      {
+        "citation": "Hongliang Ni, Lei Han, Tong Chen, Shazia Sadiq, and Gianluca Demartini. Fairness without Sensitive Attributes via Knowledge Sharing. In: The Seventh Annual ACM Conference on Fairness, Accountability, and Transparency (ACM FAccT '24). Rio de Janeiro, Brazil, June 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3630106.3659014"
+      },
+      {
+        "citation": "Jiechen Xu, Lei Han, Shazia Sadiq, and Gianluca Demartini. On the Role of Large Language Models in Crowdsourcing Misinformation Assessment. In: The 18th International AAAI Conference on Web and Social Media (ICWSM 2024). Buffalo, NY, USA, June 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1609/icwsm.v18i1.31417"
+      },
+      {
+        "citation": "Evgenia Christoforou, Gianluca Demartini, and Jahna Otterbacher. Generative AI in Crowdwork for Web and Social Media Research: A Survey of Workers at Three Platforms. In: The 18th International AAAI Conference on Web and Social Media (ICWSM 2024) - Poster Track. Buffalo, NY, USA, June 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1609/icwsm.v18i1.31452"
+      },
+      {
+        "citation": "David La Barbera, Eddy Maddalena, Michael Soprano, Kevin Roitero, Gianluca Demartini, Davide Ceolin, Damiano Spina, and Stefano Mizzaro. Crowdsourced Fact-Checking: Does It Actually Work?. In: Information Processing & Management (IPM), Elsevier. May 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1016/j.ipm.2024.103792"
+      },
+      {
+        "citation": "Catherine Sai, Shazia Sadiq, Lei Han, Gianluca Demartini, and Stefanie Rinderle-Ma. Which Legal Requirements are Relevant to a Business Process? Comparing AI-driven Methods as Expert Aid. In: The 18th International Conference on Research Challenges in Information Science (RCIS 2024). Guimaraes, Portugal, May 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/978-3-031-59465-6_11"
+      },
+      {
+        "citation": "Elyas Meguellati, Lei Han, Abraham Bernstein, Shazia Sadiq, and Gianluca Demartini. How Good are LLMs in Generating Personalized Advertisements?. In: The 2024 ACM Web Conference (Short Paper track). Singapore, May 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3589335.3651520"
+      },
+      {
+        "citation": "Michael Soprano, Kevin Roitero, David La Barbera, Davide Ceolin, Damiano Spina, Gianluca Demartini, and Stefano Mizzaro. Cognitive Biases in Fact-Checking and Their Countermeasures: A Review. In: Information Processing & Management (IPM), Vol. 61, No. 3, Elsevier. May 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1016/j.ipm.2024.103672"
+      },
+      {
+        "citation": "Linh Le, Genghong Zhao, Xia Zhang, Guido Zuccon, and Gianluca Demartini. CoLAL: Co-learning Active Learning for Text Classification. In: The 38th Annual AAAI Conference on Artificial Intelligence (AAAI-24). Vancouver, Canada, February 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1609/aaai.v38i12.29235"
+      },
+      {
+        "citation": "Jiechen Xu, Lei Han, Shazia Sadiq, and Gianluca Demartini. On the Impact of Showing Evidence from Peers in Crowdsourced Truthfulness Assessments. In: Transactions on Information Systems (TOIS). 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3637872"
+      },
+      {
+        "citation": "Guglielmo Faggioli, Laura Dietz, Charles Clarke, Gianluca Demartini, Matthias Hagen, Claudia Hauff, Noriko Kando, Evangelos Kanoulas, Martin Potthast, Benno Stein, and Henning Wachsmuth. Who determines what is relevant? Humans or AI? Why not both!. In: Communications of the ACM (CACM), Vol. 67, No. 4, April 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3624730"
+      },
+      {
+        "citation": "Gianluca Demartini, Kevin Roitero, and Stefano Mizzaro. Data Bias Management. In: Communications of the ACM (CACM), Vol. 67, No. 1, January 2024.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3611641"
+      }
+    ]
+  },
+  {
+    "year": 2023,
+    "publications": [
+      {
+        "citation": "Tianwa Chen, Gianluca Demartini, Marta Indulska, and Shazia Sadiq. Exploring Data Workers' Behaviours in Data Quality Discovery. In: The 34th Australasian Conference on Information Systems (ACIS 2023). Wellington, New Zealand, December 2023.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://aisel.aisnet.org/acis2023/99/"
+      },
+      {
+        "citation": "Ang Li, Stephen Viller, Gianluca Demartini, and Maxime Cordeil. A Visual Survey of In-Situ Running Analytics. In: The 2023 IEEE Visualization and Visual Analytics Conference (IEEE VIS 2023), Poster track. Melbourne, Australia, October 2023.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://virtual.ieeevis.org/year/2023/poster_v-vis-posters-1060.html"
+      },
+      {
+        "citation": "Guglielmo Faggioli, Laura Dietz, Charles Clarke, Gianluca Demartini, Matthias Hagen, Claudia Hauff, Noriko Kando, Evangelos Kanoulas, Martin Potthast, Benno Stein, and Henning Wachsmuth. Perspectives on Large Language Models for Relevance Judgment. In: The 13th International Conference on the Theory of Information Retrieval (ICTIR 2023). Taipei, Taiwan, July 2023. Best paper award (Top 1.4% of all submissions).",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3578337.3605136"
+      },
+      {
+        "citation": "Kevin Roitero, David La Barbera, Michael Soprano, Gianluca Demartini, Stefano Mizzaro, and Tetsuya Sakai. How Many Crowd Workers Do I Need? On Statistical Power When Crowdsourcing Relevance Judgments. In: ACM Transactions on Information Systems (TOIS). 2023.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3597201"
+      },
+      {
+        "citation": "Linh Le, Guido Zuccon, Gianluca Demartini, and Geng Hong Zhao. Active Learning with Feature Matching for Clinical Named Entity Recognition. In: Natural Language Processing Journal, Elsevier. 2023.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1016/j.nlp.2023.100015"
+      },
+      {
+        "citation": "Aki Barry, Lei Han, and Gianluca Demartini. On the Impact of Data Quality on Image Classification Fairness. In: The 46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2023) - Short paper track. Taipei, Taiwan, July 2023.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3539618.3592031"
+      },
+      {
+        "citation": "Damiano Spina, Mark Sanderson, Daniel Angus, Gianluca Demartini, Dana McKay, Lauren L. Saling, and Ryen W. White. Human-AI Cooperation to Tackle Misinformation and Polarization. In: Communications of the ACM (CACM), Volume 66, Issue 7, pp 40-45. July 2023.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3588431"
+      },
+      {
+        "citation": "Ryan Harvey, Rémi Lebret, Stéphane Massonnet, Karl Aberer, and Gianluca Demartini. Firearms On Twitter: A Novel Object Detection Pipeline. In: The 17th International AAAI Conference on Web and Social Media (ICWSM 2023) - Poster Track. Limassol, Cyprus, June 2023.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1609/icwsm.v17i1.22221"
+      },
+      {
+        "citation": "Shaochen Yu, Lei Han, Marta Indulska, Shazia Sadiq, and Gianluca Demartini. Human-in-the-loop Regular Expression Extraction for Single Column Format Inconsistency. In: 32nd ACM International World Wide Web Conference (TheWebConf 2023) - Research Track. Austin, Texas, USA, April 2023.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3543507.3583515"
+      },
+      {
+        "citation": "Luca Righes, Mohammed Saeed, Gianluca Demartini and Paolo Papotti. The Community Notes Observatory: Can Crowdsourced Fact-Checking be Trusted in Practice?. In: 32nd ACM International World Wide Web Conference (TheWebConf 2023) - Poster and Demo Track. Austin, Texas, USA, April 2023.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3543873.3587340"
+      },
+      {
+        "citation": "Jiechen Xu, Lei Han, Shazia Sadiq, and Gianluca Demartini. On the role of Human and Machine Metadata in Relevance Judgment Tasks. In: Information Processing & Management (IPM), Elsevier. 2023.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1016/j.ipm.2022.103177"
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "publications": [
+      {
+        "citation": "Lei Han, Tianwa Chen, Gianluca Demartini, Marta Indulska, and Shazia Sadiq. A Data-Driven Analysis of Behaviors in Data Curation Processes. In: ACM Transactions on Information Systems (TOIS). 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3567419"
+      },
+      {
+        "citation": "Sara Ceschia, Kevin Roitero, Gianluca Demartini, Stefano Mizzaro, Luca Di Gaspero, Andrea Schaerf. Task Design in Complex Crowdsourcing Experiments: Item Assignment Optimization. In: Computers and Operations Research, Elsevier. 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1016/j.cor.2022.105995"
+      },
+      {
+        "citation": "Hatim Lahza, Hassan Khosravi, and Gianluca Demartini. Analytics of Learning Tactics and Strategies in an Online Learnersourcing Environment. In: The Journal of Computer Assisted Learning (JCAL), Wiley. 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1111/jcal.12729"
+      },
+      {
+        "citation": "Linh Le, Guido Zuccon, Gianluca Demartini, Genghong Zhao, and Xia Zhang. Leveraging Semantic Type Dependencies for Clinical Named Entity Recognition. In: The American Medical Informatics Association (AMIA) 2022 Annual Symposium. Washington, D.C., USA, November 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10148283/"
+      },
+      {
+        "citation": "Ajay Hemanth Sampath Kumar, Aminath Shausan, Gianluca Demartini, and Afshin Rahimi. Automatic Identification of 5C Vaccine Behaviour on Social Media. In: The 8th Workshop on Noisy User-generated Text (W-NUT) co-located with the 29th International Conference on Computational Linguistics (COLING 2022). Gyeongju, Republic of Korea, October 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://aclanthology.org/2022.wnut-1.15/"
+      },
+      {
+        "citation": "Mohammed Saeed, Nicolas Traub, Maelle Nicolas, Gianluca Demartini, and Paolo Papotti. Crowdsourced Fact-Checking at Twitter: How Does the Crowd Compare With Experts?. In: The 31st ACM International Conference on Information and Knowledge Management (CIKM 2022). Atlanta, Georgia, USA, October 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3511808.3557279"
+      },
+      {
+        "citation": "Periklis Perikleous, Andreas Kafkalias, Zenonas Theodosiou, Pınar Barlas, Evgenia Christoforou, Jahna Otterbacher, Gianluca Demartini, and Andreas Lanitis. How Does the Crowd Impact the Model? A tool for raising awareness of social bias in crowdsourced training data. In: The 31st ACM International Conference on Information and Knowledge Management (CIKM 2022) - Demo track. Atlanta, Georgia, USA, October 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3511808.3557178"
+      },
+      {
+        "citation": "Hui Zhou, Lei Han, Gianluca Demartini, Marta Indulska, and Shazia Sadiq. A Behavioural Analysis of Metadata Use in Evaluating the Quality of Repurposed Data. In: The 41st International Conference on Conceptual Modeling (ER 2022). October 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/978-3-031-17995-2_22"
+      },
+      {
+        "citation": "David La Barbera, Kevin Roitero, Joel Mackenzie, Damiano Spina, Gianluca Demartini, and Stefano Mizzaro. BUM at CheckThat! 2022: A Composite Deep Learning Approach to Fake News Detection using Evidence Retrieval. In: The CLEF 2022 Conference and Labs of the Evaluation Forum - CheckThat! - Lab on Fighting the COVID-19 Infodemic and Fake News Detection, Bologna, Italy. September 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://ceur-ws.org/Vol-3180/paper-44.pdf"
+      },
+      {
+        "citation": "Hatim Lahza, Hassan Khosravi, and Gianluca Demartini. Incorporating AI and Analytics Techniques to Derive Insights from E-exam logs. In: The 23rd International Conference on Artificial Intelligence in Education, Durham, UK. July 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/978-3-031-11644-5_78"
+      },
+      {
+        "citation": "Erik Brand, Kevin Roitero, Michael Soprano, Ashfin Rahimi, and Gianluca Demartini. A Neural Model to Jointly Predict and Explain Truthfulness of Statements. In: ACM Journal of Data and Information Quality (JDIQ) Special Issue on Trust and Truth Online. June 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3546917"
+      },
+      {
+        "citation": "Yunke Qu, Kevin Roitero, David La Barbera, Damiano Spina, Stefano Mizzaro, and Gianluca Demartini. Combining Human and Machine Confidence in Truthfulness Assessment. In: ACM Journal of Data and Information Quality (JDIQ) Special Issue on Trust and Truth Online. June 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3546916"
+      },
+      {
+        "citation": "Shaoyang Fan, Pınar Barlas, Evgenia Christoforou, Jahna Otterbacher, Shazia Sadiq, and Gianluca Demartini. Socio-Economic Diversity in Human Annotations. In: The 14th ACM Web Science Conference 2022, Barcelona, Spain. June 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3501247.3531588"
+      },
+      {
+        "citation": "Shaoyang Fan, Lei Han, Gianluca Demartini, and Shazia Sadiq. Exploring Data Literacy Levels in the Crowd -- The Case of COVID-19. In: The 16th International AAAI Conference on Web and Social Media (ICWSM), Atlanta, Georgia, US. June 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://ojs.aaai.org/index.php/ICWSM/article/view/19395"
+      },
+      {
+        "citation": "Jiechen Xu, Lei Han, Shaoyang Fan, Shazia Sadiq, and Gianluca Demartini. Does Evidence from Peers Help Crowd Workers in Assessing Truthfulness?. In: 31st ACM International World Wide Web Conference (TheWebConf 2022) - Poster track. April 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3487553.3524236"
+      },
+      {
+        "citation": "Shaochen Yu, Tianwa Chen, Lei Han, Gianluca Demartini, and Shazia Sadiq. DataOps-4G: On Supporting Generalists in Data Quality Discovery. In: IEEE Transactions on Knowledge and Data Engineering (TKDE). 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1109/TKDE.2022.3151605"
+      },
+      {
+        "citation": "Kevin Roitero, Alessandro Checco, Stefano Mizzaro, and Gianluca Demartini. Preferences on a Budget: Prioritizing Document Pairs when Crowdsourcing Relevance Judgments. In: 31st ACM International World Wide Web Conference (TheWebConf 2022). April 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3485447.3511960"
+      },
+      {
+        "citation": "Hatim Lahza, Hassan Khosravi, Gianluca Demartini, and Dragan Gasevic. Effects of Technological Interventions for Self-regulation: A Control Experiment in Learnersourcing. In: 12th International Conference on Learning Analytics and Knowledge (LAK22). March 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3506860.3506911"
+      },
+      {
+        "citation": "Shazia Sadiq, Amir Aryani, Gianluca Demartini, Wen Hua, Marta Indulska, Andrew Burton Jones, Hassan Khosravi, Diana Benavides Prado, Timos Sellis, Ida Asadi Someh, Rhema Vaithianathan, Sen Wang, and Xiaofang Zhou. Information Resilience: The Nexus of Responsible and Agile Approaches to Information Use. In: The International Journal on Very Large Data Bases (VLDBJ), Springer. 2022.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/s00778-021-00720-2"
+      }
+    ]
+  },
+  {
+    "year": 2021,
+    "publications": [
+      {
+        "citation": "Lei Han, Rudra Sawant, Shaoyang Fan, Glenn Kefford, and Gianluca Demartini. An Analysis of the Australian Political Discourse in Sponsored Social Media Content. In: Proceedings of the 25th Australasian Document Computing Symposium (ADCS 2021). December 2021.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://dl.acm.org/doi/10.1145/3503516.3503533"
+      },
+      {
+        "citation": "Rudra Sawant, Gianluca Demartini, and Tom Bridge. Hierarchical Clustering of Corals using Image Clustering. In: Proceedings of the 25th Australasian Document Computing Symposium (ADCS 2021). December 2021.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3503516.3503531"
+      },
+      {
+        "citation": "Hui Zhou, Gianluca Demartini, Marta Indulska, and Shazia Sadiq. Evaluating the quality of repurposed data - The Role of Metadata. In: Proceedings of the 32nd Australasian Conference on Information Systems (ACIS 2021). December 2021.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://aisel.aisnet.org/acis2021/50"
+      },
+      {
+        "citation": "Lei Han, Xiao Dong, and Gianluca Demartini. Iterative Human-in-the-Loop Discovery of Unknown Unknowns in Image Datasets. In: Proceedings of the 9th AAAI Conference on Human Computation and Crowdsourcing (HCOMP 2021). November 2021.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://ojs.aaai.org/index.php/HCOMP/article/view/18941"
+      },
+      {
+        "citation": "Gianluca Demartini, Kevin Roitero, and Stefano Mizzaro. Bias Management in Crowdsourced Data: Moving Beyond Bias Removal. In: The CSCW 21 Workshop - Investigating and Mitigating Biases in Crowdsourced Data. October 2021.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://drive.google.com/file/d/1f2GZL_ws5DiVk58F6R3LeAf0cqhVINw3/view?usp=sharing"
+      },
+      {
+        "citation": "Erik Brand, Kevin Roitero, Michael Soprano, and Gianluca Demartini. E-BART: Jointly Predicting and Explaining Truthfulness. In: Proceedings of the 3rd Conference for Truth and Trust Online (TTO 2021). October 2021.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://truthandtrustonline.com/wp-content/uploads/2021/10/TTO2021_paper_16-1.pdf"
+      },
+      {
+        "citation": "Yunke Qu, Kevin Roitero, Stefano Mizzaro, Damiano Spina, and Gianluca Demartini. Human-in-the-Loop Systems for Truthfulness: A Study of Human and Machine Confidence. In: Proceedings of the 3rd Conference for Truth and Trust Online (TTO 2021). October 2021.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://truthandtrustonline.com/wp-content/uploads/2021/10/TTO2021_paper_29.pdf"
+      },
+      {
+        "citation": "Jorge Ramirez, Burcu Sayin, Marcos Baez, Fabio Casati, Luca Cernuzzi, Boualem Benatallah, and Gianluca Demartini. On the State of Reporting in Crowdsourcing Experiments and a Checklist to Aid Current Practices. In: Proceedings of the ACM on Human-Computer Interaction (PACMHCI), presented at the 24th ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW 2021). October 2021. Methods Recognition (intended to recognize significant methodological advances or prime examples of good methods implementation).",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3479531"
+      },
+      {
+        "citation": "Michael Soprano, Kevin Roitero, David La Barbera, Davide Ceolin, Damiano Spina, Stefano Mizzaro, and Gianluca Demartini. The Many Dimensions of Truthfulness: Crowdsourcing Misinformation Assessments on a Multidimensional Scale. In: Information Processing & Management (IPM), Elsevier. August 2021.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1016/j.ipm.2021.102710"
+      },
+      {
+        "citation": "Kevin Roitero, Michael Soprano, Beatrice Portelli, Massimiliano De Luise, Damiano Spina, Vincenzo Della Mea, Giuseppe Serra, Stefano Mizzaro, and Gianluca Demartini. Can the Crowd Judge Truthfulness? A Longitudinal Study on Recent Misinformation about COVID-19. In: Special Issue on Intelligent Systems for Tackling Online Harms in the Personal and Ubiquitous Computing Journal, Springer. July 2021.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/s00779-021-01604-6"
+      },
+      {
+        "citation": "Linh Le, Tien Nguyen, Gianluca Demartini, and Guido Zuccon. Loss-based Active Learning for Named Entity Recognition. In: International Joint Conference on Neural Networks (IJCNN 2021). July 2021.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1109/ijcnn52387.2021.9533675"
+      },
+      {
+        "citation": "Hassan Khosravi, Gianluca Demartini, Shazia Sadiq, and Dragan Gasevic. Charting the Design and Analytics Agenda of Learnersourcing Systems: Data-Driven Reflections and Lessons Learned from Implementation of a Learnersourced Adaptive Educational System. In: 11th International Conference on Learning Analytics and Knowledge (LAK21). April 2021.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3448139.3448143"
+      },
+      {
+        "citation": "Jaiden Harding, Tom Bridge, and Gianluca Demartini. CoralExp: An Explainable System to Support Coral Taxonomy Research. In: The 43rd edition of the annual BCS-IRSG European Conference on Information Retrieval (ECIR 2021) - Demo track. Lucca, Italy, March 2021.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/978-3-030-72240-1_55"
+      },
+      {
+        "citation": "Solmaz Abdi, Hassan Khosravi, Shazia Sadiq, and Gianluca Demartini. Evaluating the Quality of Learning Resources: A Learnersourcing Approach. In: IEEE Transactions on Learning Technologies (TLT). February 2021.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1109/TLT.2021.3058644"
+      }
+    ]
+  },
+  {
+    "year": 2020,
+    "publications": [
+      {
+        "citation": "Lei Han, Alessandro Checco, Djellel E. Difallah, Gianluca Demartini, and Shazia Sadiq. Modelling User Behavior Dynamics with Embeddings. In: 29th ACM International Conference on Information and Knowledge Management (CIKM 2020). Galway, Ireland, October 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3340531.3411985"
+      },
+      {
+        "citation": "Kevin Roitero, Michael Soprano, Beatrice Portelli, Damiano Spina, Vincenzo Della Mea, Giuseppe Serra, Stefano Mizzaro, and Gianluca Demartini. The COVID-19 Infodemic: Can the Crowd Judge Recent Misinformation Objectively?. In: 29th ACM International Conference on Information and Knowledge Management (CIKM 2020). Galway, Ireland, October 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3340531.3412048"
+      },
+      {
+        "citation": "Shaoyang Fan, Ujwal Gadiraju, Alessandro Checco, and Gianluca Demartini. CrowdCO-OP: Sharing Risks and Rewards in Crowdsourcing. In: Proceedings of the ACM on Human-Computer Interaction (PACMHCI) Vol.4, No. CSCW2, presented at the 23rd ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW 2020). October 2020. Honorable Mention Award (Top 2% of all submissions).",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3415203"
+      },
+      {
+        "citation": "Gianluca Demartini, Stefano Mizzaro, Damiano Spina. Human-in-the-loop Artificial Intelligence for Fighting Online Misinformation: Challenges and Opportunities. In: The Bulletin of the Technical Committee on Data Engineering, Vol. 43 No. 3. September 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://sites.computer.org/debull/A20sept/p65.pdf"
+      },
+      {
+        "citation": "Wasim Ahmed, Peter Bath, Laura Sbaffi, and Gianluca Demartini. Understanding reactions to swine flu, Ebola, and the Zika virus using Twitter data: an outlook for future infectious disease outbreaks. In: 18th International Symposium for Health Information Management Research (ISHIMR). September 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.15626/ishimr.2020.04"
+      },
+      {
+        "citation": "Xiao Dong, Huaxiang Zhang, and Gianluca Demartini. A Region Selection Model to Identify Unknown Unknowns in Image Datasets. In: 24th European Conference on Artificial Intelligence (ECAI). Santiago de Compostela, Spain, August 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.3233/FAIA200128"
+      },
+      {
+        "citation": "Humaira Ehsan, Mohamed A. Sharaf, and Gianluca Demartini. QuRVe: Query Refinement for View Recommendation in Visual Data Exploration. In: 24th European Conference on Advances in Databases and Information Systems (ADBIS). Lyon, France, August 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/978-3-030-54623-6_14"
+      },
+      {
+        "citation": "Kevin Roitero, Michael Soprano, Shaoyang Fan, Damiano Spina, Stefano Mizzaro and Gianluca Demartini. Can The Crowd Identify Misinformation Objectively? The Effects of Judgments Scale and Assessor's Bias. In: The 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2020). Xi'an, China, July 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3397271.3401112"
+      },
+      {
+        "citation": "Lei Han, Tianwa Chen, Gianluca Demartini, Marta Indulska, and Shazia Sadiq. On Understanding Data Worker Interaction Behaviors. In: The 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2020). Xi'an, China, July 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3397271.3401059"
+      },
+      {
+        "citation": "Wasim Ahmed, Peter A. Bath, Laura Sbaffi, and Gianluca Demartini. Zika Outbreak of 2016: Insights from Twitter. In: 22nd International Conference On Human-Computer Interaction. Copenhagen, Denmark, July 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/978-3-030-49576-3_32"
+      },
+      {
+        "citation": "Sihem Amer-Yahia, Senjuti Basu Roy, Lei Chen, Atsuyuki Morishima, François Charoy, Marina Danilevsky, Gianluca Demartini, Abhishek Dubey, Shady Elbassuoni, David Gross-Amblard, Emilie Hoareau, Munenari Inoguchi, Jared Kenworthy, Itaru Kitahara, Dongwon Lee, Yunyao Li, Ria Mae Borromeo, Paolo Papotti, Raghav Rao, Sudeepa Roy, Pierre Senellart, Keishi Tajima, Saravanan Thirumuruganathan, Marion Tommasi, Kazutoshi Umemoto, Andrea Wiggins, and Koichiro Yoshida. Making AI Machines Work for Humans in FoW. In: SIGMOD Record, June 2020 (Vol. 49, No. 2). June 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3442322.3442327"
+      },
+      {
+        "citation": "Tianwa Chen, Lei Han, Gianluca Demartini, Marta Indulska, and Shazia Sadiq. Building Data Curation Processes with Crowd Intelligence. In: 32nd International Conference on Advanced Information Systems Engineering (CAiSE) Forum. Grenoble, France, June 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/978-3-030-58135-0_3"
+      },
+      {
+        "citation": "Alessandro Checco, Jo Bates, and Gianluca Demartini. Adversarial Attacks on Crowdsourcing Quality Control. In: Journal of Artificial Intelligence Research (JAIR). 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1613/jair.1.11332"
+      },
+      {
+        "citation": "David La Barbera, Kevin Roitero, Damiano Spina, Stefano Mizzaro, and Gianluca Demartini. Crowdsourcing Truthfulness: The Impact of Judgment Scale and Assessor Bias. In: The 42nd European Conference on Information Retrieval (ECIR 2020). Lisbon, Portugal, April 2020. Best Short Paper Award (Top 0.6% of all submissions).",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/978-3-030-45442-5_26"
+      },
+      {
+        "citation": "Md Mostafizur Rahman, Atsuhiro Takasu, and Gianluca Demartini. Representation Learning for Entity Type Ranking. In: The 35th ACM/SIGAPP Symposium On Applied Computing (SAC 2020). Brno, Czech Republic, March 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3341105.3374029"
+      },
+      {
+        "citation": "Lei Han, Eddy Maddalena, Alessandro Checco, Cristina Sarasua, Ujwal Gadiraju, Kevin Roitero, and Gianluca Demartini. Crowd Worker Strategies in Relevance Judgment Tasks. In: 13th ACM International Conference on Web Search and Data Mining (WSDM 2020). Houston, TX, USA, February 2020.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3336191.3371857"
+      }
+    ]
+  },
+  {
+    "year": 2019,
+    "publications": [
+      {
+        "citation": "Pierre Bourhis, Gianluca Demartini, Shady Elbassuoni, Emile Hoareau, H. Raghav Rao. Ethical Challenges in the Future of Work. In: The Bulletin of the Technical Committee on Data Engineering, Vol. 42 No. 4. December 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://sites.computer.org/debull/A19dec/p55.pdf"
+      },
+      {
+        "citation": "Lei Han, Kevin Roitero, Eddy Maddalena, Stefano Mizzaro, and Gianluca Demartini. On Transforming Relevance Scales. In: The 28th ACM International Conference on Information and Knowledge Management (CIKM). Beijing, China, November 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3357384.3357988"
+      },
+      {
+        "citation": "Jimmy, Guido Zuccon, Bevan Koopman, and Gianluca Demartini. Health Card Retrieval for Consumer Health Search: An Empirical Investigation of Methods. In: The 28th ACM International Conference on Information and Knowledge Management (CIKM). Beijing, China, November 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3357384.3358128"
+      },
+      {
+        "citation": "Jimmy, Guido Zuccon, Gianluca Demartini, and Bevan Koopman. Health Cards to Assist Decision Making in Consumer Health Search. In: The American Medical Informatics Association (AMIA) 2019 Annual Symposium. Washington, D.C., USA, November 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153119/"
+      },
+      {
+        "citation": "Lei Han, Kevin Roitero, Ujwal Gadiraju, Cristina Sarasua, Alessandro Checco, Eddy Maddalena, and Gianluca Demartini. The impact of task abandonment in crowdsourcing. In: IEEE Transactions on Knowledge and Data Engineering (TKDE). October 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1109/TKDE.2019.2948168"
+      },
+      {
+        "citation": "Rehab Qarout, Alessandro Checco, Gianluca Demartini, and Kalina Bontcheva. Platform-related Factors in Repeatability and Reproducibility of Crowdsourcing Tasks. In: The 7th AAAI Conference on Human Computation and Crowdsourcing (HCOMP 2019). Skamania Lodge, WA, USA, October 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://www.aaai.org/ojs/index.php/HCOMP/article/view/5264"
+      },
+      {
+        "citation": "Michael Luggen, Djellel Difallah, Cristina Sarasua, Gianluca Demartini, and Philippe Cudré-Mauroux. Non-Parametric Class Completeness Estimators for Collaborative Knowledge Graphs. In: The International Semantic Web Conference (ISWC 2019 - Research Track). Auckland, New Zealand, October 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/978-3-030-30793-6_26"
+      },
+      {
+        "citation": "Ujwal Gadiraju and Gianluca Demartini. Understanding Worker Moods and Reactions to Rejection in Crowdsourcing. In: The 30th ACM Conference on Hypertext and Social Media (HT'19). Hof, Germany, September 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3342220.3343644"
+      },
+      {
+        "citation": "Alessandro Checco, Jo Bates, and Gianluca Demartini. Quality control attack schemes in crowdsourcing. In: The 28th International Joint Conference on Artificial Intelligence (IJCAI-19). Macao, China, August 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.24963/ijcai.2019/850"
+      },
+      {
+        "citation": "Jimmy, Guido Zuccon, Bevan Koopman, and Gianluca Demartini. Health Cards for Consumer Health Search. In: The 42nd International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2019). Paris, France, July 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3331184.3331194"
+      },
+      {
+        "citation": "Jie Yang, Alisa Smirnova, Dingqi Yang, Gianluca Demartini, Yuan Lu, and Philippe Cudré-Mauroux. Scalpel-CD: Leveraging Crowdsourcing and Deep Probabilistic Modeling for Debugging Noisy Training Data. In: The Web Conference (WWW 2019). San Francisco, CA, USA, May 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3308558.3313599"
+      },
+      {
+        "citation": "Gianluca Demartini. Implicit Bias in Crowdsourced Knowledge Graphs. In: The third international workshop on Augmenting Intelligence with Bias-Aware Humans-in-the-Loop co-located with The Web Conference (WWW 2019). San Francisco, CA, USA, May 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3308560.3317307"
+      },
+      {
+        "citation": "Djellel Difallah, Alessandro Checco, Gianluca Demartini, and Philippe Cudré-Mauroux. Deadline-Aware Fair Scheduling for Multi-Tenant Crowd-Powered Systems. In: ACM Transactions on Social Computing, Volume 2, Issue 1, Article No. 3, February 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3301003"
+      },
+      {
+        "citation": "Wasim Ahmed, Peter Bath, Laura Sbaffi, and Gianluca Demartini. Novel insights into views towards H1N1 during the 2009 Pandemic: a thematic analysis of Twitter data. In: Health Information & Libraries Journal, 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1111/hir.12247"
+      },
+      {
+        "citation": "Lei Han, Kevin Roitero, Ujwal Gadiraju, Cristina Sarasua, Alessandro Checco, Eddy Maddalena, and Gianluca Demartini. All Those Wasted Hours: On Task Abandonment in Crowdsourcing. In: 12th ACM International Conference on Web Search and Data Mining (WSDM 2019). Melbourne, Australia, February 2019.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://dl.acm.org/authorize?N676812"
+      }
+    ]
+  },
+  {
+    "year": 2018,
+    "publications": [
+      {
+        "citation": "Mengdie Zhuang, Elaine G. Toms, and Gianluca Demartini. Can User Behaviour Sequences Reflect Perceived Novelty?. In: 27th ACM International Conference on Information and Knowledge Management (CIKM 2018). Turin, Italy, October 2018.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3269206.3269243"
+      },
+      {
+        "citation": "Kevin Roitero, Gianluca Demartini, Stefano Mizzaro, and Damiano Spina. How Many Truth Levels? Six? One Hundred? Even more? Validating Truthfulness of Statements via Crowdsourcing. In: 2nd International Workshop on Rumours and Deception in Social Media (RDSM) at CIKM 2018. Turin, Italy, October 2018.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://ceur-ws.org/Vol-2482/paper38.pdf"
+      },
+      {
+        "citation": "Kevin Roitero, Eddy Maddalena, Gianluca Demartini, and Stefano Mizzaro. On Fine-Grained Relevance Scales. In: The 41st International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2018). Ann Harbor, Michigan, July 2018.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3209978.3210052"
+      },
+      {
+        "citation": "Jahna Otterbacher, Alessandro Checco, Gianluca Demartini, and Paul Clough. Investigating User Perception of Gender Bias in Image Search: The Role of Sexism. In: The 41st International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2018). Ann Harbor, Michigan, July 2018.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3209978.3210094"
+      },
+      {
+        "citation": "Jimmy, Guido Zuccon, and Gianluca Demartini. On the Volatility of Commercial Search Engines and its Impact on Information Retrieval Research. In: The 41st International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2018). Ann Harbor, Michigan, July 2018.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3209978.3210088"
+      },
+      {
+        "citation": "Alessandro Checco, Jo Bates, and Gianluca Demartini. All That Glitters is Gold -- An Attack Scheme on Gold Questions in Crowdsourcing. In: The 6th AAAI Conference on Human Computation and Crowdsourcing (HCOMP 2018). Zurich, Switzerland, July 2018. Best paper award (Top 1% of all submissions).",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://aaai.org/ocs/index.php/HCOMP/HCOMP18/paper/view/17925"
+      },
+      {
+        "citation": "Ujwal Gadiraju, Gianluca Demartini, Ricardo Kawase and Stefan Dietze. Crowd Anatomy Beyond the Good and Bad: Behavioral Traces for Crowd Worker Modeling and Pre-selection. In: Computer Supported Cooperative Work (CSCW) Special Issue on Crowd Dynamics: Conflicts, Contradictions, and Cooperation Issues in Crowdsourcing, Springer, 2018.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/s10606-018-9336-y"
+      },
+      {
+        "citation": "Cristina Sarasua, Alessandro Checco, Gianluca Demartini, Djellel Difallah, Michael Feldman, and Lydia Pintscher. The Evolution of Power and Standard Wikidata Editors: Comparing Editing Behavior over Time to Predict Lifespan and Volume of Edits. In: Computer Supported Cooperative Work (CSCW) Special Issue on Crowd Dynamics: Conflicts, Contradictions, and Cooperation Issues in Crowdsourcing, Springer, 2018.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/s10606-018-9344-y"
+      },
+      {
+        "citation": "Wasim Ahmed, Peter Bath, Laura Sbaffi, and Gianluca Demartini. Moral Panic through the Lens of Twitter: An Analysis of Infectious Disease Outbreaks. In: 9th International Conference on Social Media & Society, Work-in-progress track. Copenhagen, Denmark, July 2018.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1145/3217804.3217915"
+      },
+      {
+        "citation": "Gianluca Demartini. Semantic Interlinking. In: Encyclopedia of Big Data Technologies. 2018.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/978-3-319-63962-8_229-1"
+      },
+      {
+        "citation": "Wasim Ahmed, Peter Bath, Laura Sbaffi, and Gianluca Demartini. Measuring the Effect of Public Health Campaigns on Twitter: The Case of World Autism Awareness Day. In: iConference 2018. Sheffield, UK, March 2018.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1007/978-3-319-78105-1_2"
+      },
+      {
+        "citation": "Wasim Ahmed, Peter Bath, Laura Sbaffi, and Gianluca Demartini. Using Twitter for Insights into the 2009 Swine Flu and 2014 Ebola outbreaks. In: iConference 2018. Sheffield, UK, March 2018."
+      }
+    ]
+  },
+  {
+    "year": 2017,
+    "publications": [
+      {
+        "citation": "Gianluca Demartini, Djellel Eddine Difallah, Ujwal Gadiraju, and Michele Catasta. An Introduction to Hybrid Human-Machine Information Systems. In: Foundation and Trends in Web Science Vol. 7: No. 1, pp 1-87. 2017.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://dx.doi.org/10.1561/1800000025"
+      },
+      {
+        "citation": "Wasim Ahmed, Peter A. Bath, Gianluca Demartini. Using Twitter as a data source: An overview of ethical, legal and methodological challenges. In: The Ethics of Online Research, 79-107, Emerald. December 2017.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://doi.org/10.1108/S2398-601820180000002004"
+      },
+      {
+        "citation": "Mengdie Zhuang, Gianluca Demartini, and Elaine G. Toms. Understanding Engagement through Searching Behaviour. In: 26th ACM International Conference on Information and Knowledge Management (CIKM 2017). Singapore, November 2017.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://doi.acm.org/10.1145/3132847.3132978"
+      },
+      {
+        "citation": "Alessandro Checco, Kevin Roitero, Eddy Maddalena, Stefano Mizzaro, and Gianluca Demartini. Let's Agree to Disagree: Fixing Agreement Measures for Crowdsourcing. In: The 5th AAAI Conference on Human Computation and Crowdsourcing (HCOMP 2017). Quebec City, Canada, October 2017.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://aaai.org/ocs/index.php/HCOMP/HCOMP17/paper/view/15927"
+      },
+      {
+        "citation": "Eddy Maddalena, Kevin Roitero, Gianluca Demartini, and Stefano Mizzaro. Considering Assessor Agreement in IR Evaluation. In: The 3rd ACM International Conference on the Theory of Information Retrieval (ICTIR 2017). Amsterdam, The Netherlands, October 2017.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://doi.acm.org/10.1145/3121050.3121060"
+      },
+      {
+        "citation": "Alessandro Checco and Gianluca Demartini. Para Bellum - Breaking Gold Questions Quality Assurance Systems in Paid Micro-task Crowdsourcing. In: 2017 Workshop on Hybrid Human-Machine Computing (HHMC 2017). Guildford, UK, September 2017."
+      },
+      {
+        "citation": "Ujwal Gadiraju, Alessandro Checco, Neha Gupta, and Gianluca Demartini. Modus Operandi of Crowd Workers: The Invisible Role of Microtask Work Environments. In: Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT) presented at The ACM International Joint Conference on Pervasive and Ubiquitous Computing (UBICOMP 2017). Maui, Hawaii, September 2017.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://eprints.whiterose.ac.uk/120946/"
+      },
+      {
+        "citation": "Alessandro Checco, Gianluca Demartini, Alexander Löser, Ines Arous, Matthias Dantone, Richard Koopmanschap, Svetlin Stalinov, Martin Kersten, and Ying Zhang. FashionBrain Project: A Vision for Understanding Europe's Fashion Data Universe. In: 'Machine learning meets fashion' workshop at KDD 2017. Halifax, Nova Scotia, Canada, August 2017.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://kddfashion2017.mybluemix.net/final_submissions/ML4Fashion_paper_15.pdf"
+      },
+      {
+        "citation": "Wasim Ahmed, Gianluca Demartini, and Peter Bath. Topics Discussed on Twitter at the Beginning of the 2014 Ebola Epidemic in United States. In: iConference 2017. Wuhan, China, March 2017.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://www.ideals.illinois.edu/handle/2142/96718"
+      }
+    ]
+  },
+  {
+    "year": 2016,
+    "publications": [
+      {
+        "citation": "Eddy Maddalena, Marco Basaldella, Dario De Nart, Dante Degl'Innocenti, Stefano Mizzaro, and Gianluca Demartini. Crowdsourcing Relevance Assessments: The Unexpected Benefits of Limiting the Time to Judge. In: The 4th AAAI Conference on Human Computation and Crowdsourcing (HCOMP 2016). Austin, Texas, November 2016.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://www.aaai.org/ocs/index.php/HCOMP/HCOMP16/paper/view/14040/"
+      },
+      {
+        "citation": "Jie Yang, Judith Redi, Gianluca Demartini, and Alessandro Bozzon. Modeling Task Complexity in Crowdsourcing. In: The 4th AAAI Conference on Human Computation and Crowdsourcing (HCOMP 2016). Austin, Texas, November 2016.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "https://www.aaai.org/ocs/index.php/HCOMP/HCOMP16/paper/view/14039/"
+      },
+      {
+        "citation": "Muhammad Helmy, Marco Basaldella, Eddy Maddalena, Stefano Mizzaro, and Gianluca Demartini. Towards Building a Standard Dataset for Arabic Keyphrase Extraction Evaluation. In: The 20th International Conference on Asian Language Processing (IALP 2016). Taiwan, November 2016.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://ieeexplore.ieee.org/document/7875927/"
+      },
+      {
+        "citation": "Gianluca Demartini. A Tutorial on Leveraging Knowledge Graphs for Web Search. In: Communications in Computer and Information Science, Volume 573, Pages 24-37. Information Retrieval 9th Russian Summer School, RuSSIR 2015 Saint Petersburg, Russia, August 24-28, 2015. Revised Selected Papers. Springer.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://link.springer.com/chapter/10.1007%2F978-3-319-41718-9_2"
+      },
+      {
+        "citation": "Mengdie Zhuang, Elaine G. Toms, and Gianluca Demartini. Search Behaviour Before and After Search Success. In: Workshop on Search as Learning (SAL 2016) at SIGIR 2016. Pisa, Italy, July 2016.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://ceur-ws.org/Vol-1647/SAL2016_paper_10.pdf"
+      },
+      {
+        "citation": "Paul Clough, Philip Webster, Gianluca Demartini, Sonia Ranade, and Tom Storrar. Exploring Entity-Centric Methods in the UK Government Web Archive. In: Workshop on Accessing Cultural Heritage at Scale (ACHS 2016) at JCDL 2016. Newark, New Jersey, USA, June 2016.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://ceur-ws.org/Vol-1611/paper5.pdf"
+      },
+      {
+        "citation": "Djellel Eddine Difallah, Gianluca Demartini, and Philippe Cudré-Mauroux. Scheduling Human Intelligence Tasks in Multi-Tenant Crowd-Powered Systems. In: 25th International Conference on World Wide Web (WWW 2016), Research Track. Montreal, Canada, April 2016.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://doi.acm.org/10.1145/2872427.2883030"
+      },
+      {
+        "citation": "Mengdie Zhuang, Elaine G. Toms, and Gianluca Demartini. The Relationship between User Perception and User Behaviour in Interactive Information Retrieval Evaluation. In: 38th European Conference on Information Retrieval (ECIR 2016). Padua, Italy, March 2016. Best Paper Award (Top 0.5% of all submissions).",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://dx.doi.org/10.1007/978-3-319-30671-1_22"
+      },
+      {
+        "citation": "Alberto Tonon, Michele Catasta, Roman Prokofyev, Gianluca Demartini, Karl Aberer, and Philippe Cudré-Mauroux. Contextualized Ranking of Entity Types based on Knowledge Graphs. In: Journal of Web Semantics, Volumes 37-38, Pages 170-183, Elsevier. March 2016.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://dx.doi.org/10.1016/j.websem.2015.12.005"
+      }
+    ]
+  },
+  {
+    "year": 2015,
+    "publications": [
+      {
+        "citation": "Alberto Tonon, Gianluca Demartini, and Philippe Cudré-Mauroux. Pooling-Based Continuous Evaluation of Information Retrieval Systems. In: Information Retrieval, Volume 18, Issue 5 (2015), Page 445-472, Springer.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://link.springer.com/article/10.1007/s10791-015-9266-y"
+      },
+      {
+        "citation": "Gianluca Demartini. Hybrid Human-Machine Information Systems: Challenges and Opportunities. In: Computer Networks, Special Issue on Crowdsourcing, Volume 90, page 5-13 (2015), Elsevier.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://dx.doi.org/10.1016/j.comnet.2015.05.018"
+      },
+      {
+        "citation": "Ujwal Gadiraju, Gianluca Demartini, Ricardo Kawase, and Stefan Dietze. Human beyond the Machine: Challenges and Opportunities of Microtask Crowdsourcing. In: IEEE Intelligent Systems, Volume 30 Issue 4 - Jul/Aug 2015.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://dx.doi.org/10.1109/MIS.2015.66"
+      },
+      {
+        "citation": "Alberto Tonon, Michele Catasta, Gianluca Demartini, and Philippe Cudré-Mauroux. Fixing the Domain and Range of Properties in Linked Data by Context Disambiguation. In: The 8th Workshop on Linked Data on the Web (LDOW2015) at WWW2015. Firenze, Italy, May 2015.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://events.linkeddata.org/ldow2015/papers/ldow2015_paper_01.pdf"
+      }
+    ]
+  },
+  {
+    "year": 2014,
+    "publications": [
+      {
+        "citation": "Roman Prokofyev, Ruslan Mavlyutov, Martin Grund, Gianluca Demartini, and Philippe Cudré-Mauroux. Correct Me If I'm Wrong: Fixing Grammatical Errors by Preposition Ranking. In: 23rd ACM International Conference on Information and Knowledge Management (CIKM 2014). Shanghai, China, November 2014.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://doi.acm.org/10.1145/2661829.2661942"
+      },
+      {
+        "citation": "Djellel Eddine Difallah, Michele Catasta, Gianluca Demartini, and Philippe Cudré-Mauroux. Scaling-up the Crowd: Micro-Task Pricing Schemes for Worker Retention and Latency Improvement. In: Second AAAI Conference on Human Computation and Crowdsourcing (HCOMP-2014). Pittsburgh, USA, November 2014.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://www.aaai.org/ocs/index.php/HCOMP/HCOMP14/paper/view/8958"
+      },
+      {
+        "citation": "Michele Catasta, Alberto Tonon, Djellel Eddine Difallah, Gianluca Demartini, Karl Aberer, and Philippe Cudré-Mauroux. TransactiveDB: Tapping into Collective Human Memories. In: 40th International Conference on Very Large Data Bases (VLDB). PVLDB Volume 7 Issue 14. Hangzhou, China, September 2014.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://www.vldb.org/pvldb/vol7/p1977-catasta.pdf"
+      },
+      {
+        "citation": "Michele Catasta, Alberto Tonon, Gianluca Demartini, Jean-Eudes Ranvier, Karl Aberer, and Philippe Cudré-Mauroux. B-hist: Entity-Centric Search over Personal Web Browsing History. In: Journal of Web Semantics, Elsevier. July 2014.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://dx.doi.org/10.1016/j.websem.2014.07.003"
+      },
+      {
+        "citation": "Roman Prokofyev, Gianluca Demartini, and Philippe Cudré-Mauroux. Effective Named Entity Recognition for Idiosyncratic Web Collections. In: 23rd International Conference on World Wide Web (WWW 2014), Research Track. Seoul, South Korea, April 2014.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://doi.acm.org/10.1145/2566486.2568013"
+      },
+      {
+        "citation": "Michele Catasta, Alberto Tonon, Djellel Eddine Difallah, Gianluca Demartini, Karl Aberer, and Philippe Cudré-Mauroux. Hippocampus: Answering Memory Queries using Transactive Search. In: 23rd International Conference on World Wide Web (WWW 2014), Web Science Track. Seoul, South Korea, April 2014.",
+        "pdfLabel": "[pdf]",
+        "pdfUrl": "http://doi.acm.org/10.1145/2567948.2576946"
+      }
+    ]
+  }
+]

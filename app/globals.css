@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --flag_background: rgb(248,248,248);
+  overflow-y: scroll
+}
+
+
+.debug {
+  border: 1px solid red;
+}
+
+.katex {
+  color: #c14343;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --flag_background: #1f2937;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@layer base {
+  body, p, span, div, li {
+    font-family: var(--font-inconsolata), monospace;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-quicksand), sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://dlab.example.com/</loc>
+    <lastmod>2025-05-31</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://dlab.example.com/people</loc>
+    <lastmod>2025-05-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dlab.example.com/research</loc>
+    <lastmod>2025-05-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dlab.example.com/blog</loc>
+    <lastmod>2025-05-31</lastmod>
+    <priority>0.7</priority>
+  </url>
+</urlset>

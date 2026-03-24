@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dlab.example.com/sitemap.xml

@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Prof. Gianluca Demartini",
+    "role": "Head of the Lab",
+    "isHeadOfLab": true,
+    "image": "/images/people/Gianluca_Demartini_dlab.jpg"
+  },
+  {
+    "name": "Andrea Paganelli",
+    "role": "PhD Student",
+    "image": "/images/people/Andrea_Paganelli_dlab.jpg"
+  },
+  {
+    "name": "Bing Tuo",
+    "role": "PhD Student",
+    "image": "/images/people/Bing_Tuo_dlab.jpg"
+  },
+  {
+    "name": "Elyas Meguellati",
+    "role": "PhD Student",
+    "image": "/images/people/Elyas_dlab.jpg"
+  },
+  {
+    "name": "Farid Ariai",
+    "role": "PhD Student",
+    "image": "/images/people/Farid_Ariai_dlab.jpg"
+  },
+  {
+    "name": "Hongliang Ni",
+    "role": "PhD Student",
+    "image": "/images/people/Hongliang_Ni_dlab.jpg"
+  },
+  {
+    "name": "Pietro Bernardelle",
+    "role": "PhD Student",
+    "image": "/images/people/Pietro_Bernardelle_dlab.jpg"
+  },
+  {
+    "name": "Samaneh Mohtadi",
+    "role": "PhD Student",
+    "image": "/images/people/Samaneh_Mohtadi_dlab.jpg"
+  },
+  {
+    "name": "Stefano Civelli",
+    "role": "PhD Student",
+    "image": "/images/people/stefano_civelli_dlab.jpg"
+  },
+  {
+    "name": "Shangqian Li",
+    "role": "PhD Student",
+    "image": "/images/people/Shangqian_Li_dlab.jpg"
+  }
+]
