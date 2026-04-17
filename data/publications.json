@@ -3,6 +3,12 @@
     "year": 2026,
     "publications": [
       {
+        "citation": "Stefano Civelli, Pietro Bernardelle, Nicol&ograve; Brunello, and Gianluca Demartini. A Shared Geometry of Difficulty in Multilingual Language Models. In: The 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026) - Short paper. San Diego, California, July 2026."
+      },
+      {
+        "citation": "Stefano Civelli, Pietro Bernardelle, Nardiena A. Pratama, and Gianluca Demartini. Ideology-Based LLMs for Content Moderation. In: ACM Transactions on Intelligent Systems and Technology (TIST). 2026."
+      },
+      {
         "citation": "Pietro Bernardelle, Leon Fröhling, Stefano Civelli, and Gianluca Demartini. SubData: Bridging Heterogeneous Datasets to Enable Theory-Driven Evaluation of Political and Demographic Perspectives in LLMs. In: 5th Workshop on Perspectivist Approaches to NLP (NLPerspectives 2026) at the 15th Language Resources and Evaluation Conference (LREC). Mallorca, Spain, May 2026."
       },
       {
@@ -149,7 +155,7 @@
         "pdfUrl": "https://doi.org/10.1145/3712716.3712719"
       },
       {
-        "citation": "Mads Skipanes, Tollef Emil Jørgensen, Kyle Porter, Gianluca Demartini, and Sule Yildirim Yayilgan. Enhancing Criminal Investigation Analysis with Summarization and Memory-based Retrieval-Augmented Generation: A Comprehensive Evaluation of Real Case Data. In: The 31st International Conference on Computational Linguistics (COLING 2025). Abu Dhabi, UAE, January 2025.",
+        "citation": "Mads Skipanes, Tollef Emil J&oslashrgensen, Kyle Porter, Gianluca Demartini, and Sule Yildirim Yayilgan. Enhancing Criminal Investigation Analysis with Summarization and Memory-based Retrieval-Augmented Generation: A Comprehensive Evaluation of Real Case Data. In: The 31st International Conference on Computational Linguistics (COLING 2025). Abu Dhabi, UAE, January 2025.",
         "pdfLabel": "[pdf]",
         "pdfUrl": "https://aclanthology.org/2025.coling-main.334/"
       }
