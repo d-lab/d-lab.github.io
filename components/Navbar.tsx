@@ -20,8 +20,8 @@ export default function Navbar() {
       <nav className="bg-[#231e52] dark:bg-[#231e52] text-white dark:text-gray-100 h-12 fixed top-0 left-0 right-0 z-50 shadow-md">
         <div className="container mx-auto px-4 max-w-4xl flex justify-between items-center h-full">
           {/* Logo/Name - Responsive sizing */}
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="text-base sm:text-lg md:text-xl font-bold truncate max-w-[150px] sm:max-w-none hover:text-yellow-300 transition-colors"
             onClick={closeMenu}
           >
@@ -30,6 +30,9 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden sm:flex items-center space-x-4">
+            <Link href="/about" className="hover:text-yellow-300">
+              About Us
+            </Link>
             <Link href="/people" className="hover:text-yellow-300">
               People
             </Link>
@@ -65,11 +68,17 @@ export default function Navbar() {
 
         {/* Mobile Navigation Menu */}
         <div
-          className={`sm:hidden absolute top-12 left-0 right-0 bg-[#231e52] dark:bg-[#231e52] text-white shadow-lg transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-          }`}
+          className={`sm:hidden absolute top-12 left-0 right-0 bg-[#231e52] dark:bg-[#231e52] text-white shadow-lg transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+            }`}
         >
           <div className="container mx-auto px-4 py-4 space-y-3">
+            <Link
+              href="/about"
+              className="block py-2 hover:text-yellow-300"
+              onClick={closeMenu}
+            >
+              About Us
+            </Link>
             <Link
               href="/people"
               className="block py-2 hover:text-yellow-300"
@@ -114,7 +123,7 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-      
+
       {/* Spacer to prevent content from hiding under fixed navbar */}
       <div className="h-12 w-full"></div>
     </>
