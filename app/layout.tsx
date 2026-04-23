@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inconsolata, Quicksand } from 'next/font/google';
 import "./globals.css";
 import Navbar from '../components/Navbar';
+import GoogleAnalytics from "../components/GoogleAnalytics";
 import ThemeProvider from '../components/ThemeProvider';
 import 'katex/dist/katex.min.css';
+
+const GA_MEASUREMENT_ID = "G-ZG6585B2M8";
 
 const inconsolata = Inconsolata({
   subsets: ['latin'],
@@ -76,11 +80,25 @@ export default function RootLayout({
           integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC"
           crossOrigin="anonymous"
         />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });
+          `}
+        </Script>
       </head>
       <body
         className={`${inconsolata.variable} ${quicksand.variable} font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
           <Navbar />
           <main className="w-full overflow-x-hidden">
             {children}
