@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import StructuredData from '@/components/StructuredData';
 import { getAllPosts } from '@/lib/posts';
-import { absoluteUrl, siteDescription, siteName } from '@/lib/site';
+import { absoluteUrl, siteName } from '@/lib/site';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
