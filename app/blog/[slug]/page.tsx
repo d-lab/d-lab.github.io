@@ -1,5 +1,7 @@
 import { getAllPosts, getPostBySlug } from '@/lib/posts';
 import { Metadata } from 'next';
+import StructuredData from '@/components/StructuredData';
+import { absoluteUrl, parseOptionalDate, siteName } from '@/lib/site';
 
 interface PostProps {
   params: {
@@ -12,6 +14,9 @@ export async function generateMetadata({ params }: PostProps): Promise<Metadata>
   
   return {
     title: post.title,
+    alternates: {
+      canonical: `/blog/${params.slug}`,
+    },
   };
 }
 
@@ -25,9 +30,28 @@ export async function generateStaticParams() {
 
 export default async function Post({ params }: PostProps) {
   const post = await getPostBySlug(params.slug);
+  const publishedDate = parseOptionalDate(post.date);
   
   return (
     <article className="max-w-4xl mx-auto py-12 px-4">
+      <StructuredData
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: post.title,
+          url: absoluteUrl(`/blog/${post.slug}`),
+          datePublished: publishedDate?.toISOString(),
+          author: {
+            '@type': 'Organization',
+            name: siteName,
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: siteName,
+          },
+          mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
+        }}
+      />
       <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
    

@@ -1,9 +1,37 @@
 
+import type { Metadata } from 'next';
+import StructuredData from '@/components/StructuredData';
+import { absoluteUrl, siteDescription, siteName } from '@/lib/site';
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description:
+    'Learn about DLab, a research lab at The University of Queensland focused on responsible AI, sociotechnical systems, and human-centered data science.',
+  alternates: {
+    canonical: '/about',
+  },
+};
 
 export default function AboutUs() {
 
   return (
     <div className="max-w-6xl mx-auto py-16 sm:py-20 px-4 sm:px-6">
+      <StructuredData
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          name: `About ${siteName}`,
+          url: absoluteUrl('/about'),
+          description:
+            'Overview of DLab, its research mission, sponsorship, and interdisciplinary work across data, people, and AI.',
+          about: {
+            '@type': 'ResearchOrganization',
+            name: siteName,
+            description: siteDescription,
+            url: absoluteUrl('/'),
+          },
+        }}
+      />
       <header className="mb-12 pb-8 border-b border-slate-200 dark:border-slate-800">
         <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">DLab</p>
         <h1 className="text-4xl sm:text-5xl font-semibold text-slate-900 dark:text-slate-100 mt-3">About Us</h1>
@@ -20,7 +48,6 @@ export default function AboutUs() {
 
 
 }
-
 
 
 

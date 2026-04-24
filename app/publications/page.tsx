@@ -1,4 +1,7 @@
+import type { Metadata } from 'next';
+import StructuredData from '@/components/StructuredData';
 import publicationsData from '@/data/publications.json';
+import { absoluteUrl, siteName } from '@/lib/site';
 
 type Publication = {
   citation: string;
@@ -13,11 +16,47 @@ type PublicationGroup = {
 
 const sortByYearDesc = (groups: PublicationGroup[]) => [...groups].sort((a, b) => b.year - a.year);
 
+export const metadata: Metadata = {
+  title: 'Publications',
+  description: 'Scientific publications from DLab covering responsible AI, data quality, information retrieval, and sociotechnical systems.',
+  alternates: {
+    canonical: '/publications',
+  },
+};
+
 export default function PublicationsPage() {
   const publicationGroups = sortByYearDesc(publicationsData as PublicationGroup[]);
+  const publications = publicationGroups.flatMap((group) =>
+    group.publications.map((publication) => ({
+      ...publication,
+      year: group.year,
+    }))
+  );
 
   return (
     <div className="max-w-5xl mx-auto py-16 sm:py-20 px-4 sm:px-6">
+      <StructuredData
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: `${siteName} Publications`,
+          description: 'Scientific publications from DLab grouped by year.',
+          url: absoluteUrl('/publications'),
+          mainEntity: {
+            '@type': 'ItemList',
+            itemListElement: publications.map((publication, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              item: {
+                '@type': 'ScholarlyArticle',
+                name: publication.citation,
+                url: publication.pdfUrl,
+                datePublished: publication.year.toString(),
+              },
+            })),
+          },
+        }}
+      />
       <header className="mb-12 pb-8 border-b border-slate-200 dark:border-slate-800">
         <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">DLab</p>
         <h1 className="text-4xl sm:text-5xl font-semibold text-slate-900 dark:text-slate-100 mt-3">Publications</h1>

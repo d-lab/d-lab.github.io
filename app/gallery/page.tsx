@@ -1,17 +1,43 @@
 import type { Metadata } from 'next';
+import StructuredData from '@/components/StructuredData';
 import Image from 'next/image';
 import Link from 'next/link';
 import { groupPictures, heroGroupPicture } from '@/data/groupPictures';
+import { absoluteUrl, siteName } from '@/lib/site';
 import { withBasePath } from '@/lib/withBasePath';
 
 export const metadata: Metadata = {
   title: 'Gallery',
   description: 'A visual archive of DLab group moments, events, and collaborations.',
+  alternates: {
+    canonical: '/gallery',
+  },
 };
 
 export default function GalleryPage() {
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+      <StructuredData
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: `${siteName} Gallery`,
+          description: 'A visual archive of DLab group moments, events, and collaborations.',
+          url: absoluteUrl('/gallery'),
+          mainEntity: {
+            '@type': 'ItemList',
+            itemListElement: groupPictures.map((picture, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              item: {
+                '@type': 'ImageObject',
+                name: picture.alt,
+                contentUrl: absoluteUrl(picture.src),
+              },
+            })),
+          },
+        }}
+      />
       <section className="relative isolate overflow-hidden rounded-3xl shadow-2xl">
         <div className="absolute inset-0">
           <Image

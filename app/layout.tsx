@@ -4,7 +4,9 @@ import { Inconsolata, Quicksand } from 'next/font/google';
 import "./globals.css";
 import Navbar from '../components/Navbar';
 import GoogleAnalytics from "../components/GoogleAnalytics";
+import StructuredData from "../components/StructuredData";
 import ThemeProvider from '../components/ThemeProvider';
+import { siteDescription, siteName, siteTitle, siteUrl } from '@/lib/site';
 import 'katex/dist/katex.min.css';
 
 const GA_MEASUREMENT_ID = "G-ZG6585B2M8";
@@ -22,22 +24,25 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://d-lab.github.io/'),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: 'DLab — Responsible AI Research Lab',
+    default: siteTitle,
     template: '%s | DLab'
   },
-  description: 'DLab is an interdisciplinary research group exploring how data, people, and AI affect each other.',
+  description: siteDescription,
   keywords: ['DLab', 'research lab', 'AI research', 'responsible AI', 'AI for public good', 'human-centered computing'],
-  authors: [{ name: 'DLab' }],
-  creator: 'DLab',
+  authors: [{ name: siteName }],
+  creator: siteName,
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://d-lab.github.io/',
-    siteName: 'DLab',
-    title: 'DLab — Responsible AI Research Lab',
-    description: 'Interdisciplinary research group exploring how data, people, and AI affect each other.',
+    url: siteUrl,
+    siteName,
+    title: siteTitle,
+    description: siteDescription,
     images: [
       {
         url: '/og-image.jpg',
@@ -49,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DLab — Responsible AI Research Lab',
-    description: 'Interdisciplinary research group exploring how data, people, and AI affect each other.',
+    title: siteTitle,
+    description: siteDescription,
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -104,22 +109,18 @@ export default function RootLayout({
             {children}
           </main>
         </ThemeProvider>
-        {/* Structured Data Script */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ResearchOrganization",
-              "name": "DLab",
-              "description": "Interdisciplinary research group exploring how data, people, and AI affect each other.",
-              "url": "https://d-lab.github.io/",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "General enquiries",
-                "email": "demartini@acm.org"
-              }
-            })
+        <StructuredData
+          data={{
+            '@context': 'https://schema.org',
+            '@type': 'ResearchOrganization',
+            name: siteName,
+            description: siteDescription,
+            url: siteUrl,
+            contactPoint: {
+              '@type': 'ContactPoint',
+              contactType: 'General enquiries',
+              email: 'demartini@acm.org',
+            },
           }}
         />
       </body>

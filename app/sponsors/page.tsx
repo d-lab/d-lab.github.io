@@ -57,6 +57,9 @@ const sponsors: Sponsor[] = [
 export const metadata: Metadata = {
   title: 'Sponsors',
   description: 'Organizations sponsoring and supporting DLab research.',
+  alternates: {
+    canonical: '/sponsors',
+  },
 };
 
 export default function SponsorsPage() {

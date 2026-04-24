@@ -1,5 +1,16 @@
+import type { Metadata } from 'next';
+import StructuredData from '@/components/StructuredData';
 import { getAllPosts } from '@/lib/posts';
+import { absoluteUrl, siteDescription, siteName } from '@/lib/site';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Lab Notes',
+  description: 'News, essays, and research notes from DLab on AI, data, and sociotechnical systems.',
+  alternates: {
+    canonical: '/blog',
+  },
+};
 
 const PostCard = ({ post }: { post: { slug: string; title: string; date: string } }) => {
   return (
@@ -22,6 +33,24 @@ export default function Blog() {
   
   return (
     <div className="max-w-3xl mx-auto py-16 px-4">
+      <StructuredData
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: `${siteName} Lab Notes`,
+          description: 'Blog index for DLab research notes, essays, and updates.',
+          url: absoluteUrl('/blog'),
+          mainEntity: {
+            '@type': 'ItemList',
+            itemListElement: posts.map((post, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              url: absoluteUrl(`/blog/${post.slug}`),
+              name: post.title,
+            })),
+          },
+        }}
+      />
       <div className="mb-10">
         <h1 className="text-4xl font-bold text-blue-700 dark:text-yellow-300 mb-4">Lab Notes</h1>
         <p className="text-gray-600 dark:text-gray-200">

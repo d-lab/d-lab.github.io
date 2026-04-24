@@ -2,8 +2,19 @@ import fs from 'fs';
 import path from 'path';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import type { Metadata } from 'next';
 import CustomLink from '@/components/CustomLink';
+import StructuredData from '@/components/StructuredData';
+import { absoluteUrl, siteName } from '@/lib/site';
 import type { Components } from 'react-markdown';
+
+export const metadata: Metadata = {
+  title: 'Now',
+  description: 'Current updates, links, and notes from DLab.',
+  alternates: {
+    canonical: '/now',
+  },
+};
 
 const NowPage = () => {
   const contentPath = path.join(process.cwd(), 'app', 'now', 'content.md');
@@ -44,6 +55,15 @@ const NowPage = () => {
 
   return (
     <div className="max-w-3xl mx-auto py-12 px-4">
+      <StructuredData
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: `${siteName} Now`,
+          description: 'Current updates, links, and notes from DLab.',
+          url: absoluteUrl('/now'),
+        }}
+      />
       <ReactMarkdown
         components={MarkdownComponents}
         remarkPlugins={[remarkGfm]}
