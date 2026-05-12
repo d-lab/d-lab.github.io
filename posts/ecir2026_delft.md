@@ -11,23 +11,23 @@ From 29 March to 2 April, I travelled to Delft, the Netherlands, to attend **the
 
 Delft itself added a lot to the experience. The city felt calm, elegant, and distinctly Dutch, with canals, historic buildings, narrow streets, and a vibrant cycling culture that gave it a sustainable and environmentally friendly character. As a visitor, you quickly learned to stay aware of bike lanes and the steady local flow, but that was part of the charm of being in a place where sustainable transport is so naturally embedded in daily life.
 
-![A canal street in Delft with bicycles and historic buildings](../../images/blog/samaneh_4.jpg)
-
 Late March and early April brought cold weather, but also a fresh early-spring feeling that made walking through the city especially memorable.
 
-![Early spring sky over Delft](../../images/blog/samaneh_2.jpg)
+![Early spring sky over Delft](../../images/blog/samaneh_2.jpg) ![A canal street in Delft with bicycles and historic buildings](../../images/blog/samaneh_4.jpg)
 
 ## **Tutorial Day at TU Delft**
 
 The conference began on Sunday, 29 March, with tutorials at the TU Delft Aula, a landmark example of Brutalist architecture whose heavy exposed concrete makes it one of TU Delft’s most distinctive ceremonial and conference spaces.
 
-![TU Delft Aula and bicycles outside the conference venue](../../images/blog/samaneh_3.jpg)
+![TU Delft Aula](../../images/blog/samaneh_6.jpg)
 
 I started the day with the tutorial **“Reasoning for IR & IR for Reasoning.”** What I found especially valuable was its argument that many information needs in IR require more than semantic relatedness, particularly when evidence is scattered across documents or when queries involve compositional, temporal, or constraint-based requirements.
 
 In the afternoon, I attended **“Uncertainty Quantification for Large Language Models,”** which focused on how uncertainty estimates can help detect hallucinations and make LLM-based systems more reliable. I found it especially interesting because it connected uncertainty not only to confidence estimation, but also to practical tasks such as selective generation, claim-level hallucination detection, retrieval-augmented generation, and even reasoning and agentic workflows.
 
 The tutorial day concluded with the **Welcome Reception at the Aula**, held on Sunday evening after the tutorials. It was an informal and very pleasant start to the conference week, offering drinks, light bites, and a first chance to reconnect with colleagues and meet other participants in a relaxed setting. Alongside the conversations, I also tried bitterballen, a classic Dutch snack that quickly became one of my favourite local experiences.
+
+![](../../images/blog/samaneh_7.jpg)
 
 ## **The Main Conference at Lijm & Cultuur**
 

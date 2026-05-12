@@ -29,6 +29,25 @@ body {
   background: var(--background);
 }
 
+.prose p:has(> img + img) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.prose p:has(> img + img) img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .prose p:has(> img + img) {
+    grid-template-columns: 1fr;
+  }
+}
+
 @layer base {
   body, p, span, div, li {
     font-family: var(--font-inconsolata), monospace;
@@ -44,4 +63,3 @@ body {
     text-wrap: balance;
   }
 }
-
