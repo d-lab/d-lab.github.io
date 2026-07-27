@@ -45,7 +45,10 @@ export default function Navbar() {
             <Link href="/sponsors" className="hover:text-yellow-300">
               Sponsors
             </Link>
-            <Link href="/blog" className="hover:text-yellow-300">
+		<Link href="/visiting" className="hover:text-yellow-300">
+              Visiting Us
+            </Link>            
+		<Link href="/blog" className="hover:text-yellow-300">
               Blog
             </Link>
             <ThemeSwitcher />
