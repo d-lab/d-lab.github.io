@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Spend time at the DLab, to conduct research on responsible AI, sociotechnical systems, and human-centered data science.',
   alternates: {
-    canonical: '/about',
+    canonical: '/visiting',
   },
 };
 
@@ -40,7 +40,7 @@ export default function VisitingUs() {
 	The DLab Visiting Students Scheme supports high calibre research students to spend 8-12 weeks working with DLab researchers to conduct joint research work on areas of mutual interest. <br />           
 Successful applicants will be based at The University of Queensland (UQ) in Brisbane. They are provided with funding support via a lump sum to partially cover living costs and return airfares. The scheme is primarily intended for PhD students who have already passed their Qualification Exam at their respective university, however exceptions may be made for Masters or Bachelor students who demonstrate strong research and development expertise to the assessment panel. Applicants’ main research expertise is to be aligned with data science and in particular with the research specialisations of DLab.<br />
 <br />
-Dlab funding offered:<br />
+Dlab funding offered:<br /> 
 <br />
 AUD $5,000 for an 8-week visit, or <br />
 AUD $6,000 for a 12-week visit <br />
