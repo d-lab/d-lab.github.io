@@ -55,7 +55,7 @@ The student should provide the following, sent as one PDF file to the contact ad
 </ul>
 <br />
 <b>Review process</b><br />
-DLab will form a review panel and aim to provide a decision within 14 business days (unless specified otherwise). <br />
+Applications are received on an ongoing basis. DLab will form a review panel and aim to provide a decision within 14 business days (unless specified otherwise) from submission. <br />
 <br />
 <b>Get in touch</b><br />
 All information should be sent in an email with the subject “DLab Visiting Student Scheme” to demartini@acm.org, copied to the student’s supervisor. <br />
