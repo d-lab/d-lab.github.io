@@ -57,7 +57,7 @@ DLab will form a review panel and aim to provide a decision within 14 business d
 <br />
 Get in touch<br />
 All information should be sent in an email with the subject “CIRES Visiting Student Scheme” to demartini@acm.org, copied to the proposed UQ-based collaborator and the student’s supervisor. <br />
-          <b>Before submitting a complete application, it is recommended to get in touch with Prof. Gianluca Demartini to check the viability of the proposed application.</B
+          <b>Before submitting a complete application, it is recommended to get in touch with Prof. Gianluca Demartini to check the viability of the proposed application.</b>
         </p>
       </header>
     </div>
