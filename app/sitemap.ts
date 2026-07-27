@@ -5,7 +5,6 @@ import { absoluteUrl, parseOptionalDate } from '@/lib/site';
 const staticRoutes = [
   { path: '/', priority: 1, changeFrequency: 'weekly' },
   { path: '/about', priority: 0.9, changeFrequency: 'monthly' },
-  { path: '/visiting', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/people', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/publications', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/blog', priority: 0.7, changeFrequency: 'weekly' },
