@@ -48,5 +48,9 @@ export function getAllPosts() {
     };
   });
 
-  return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return posts.sort((a, b) => {
+    const dateDifference = Date.parse(b.date) - Date.parse(a.date);
+
+    return dateDifference || a.slug.localeCompare(b.slug);
+  });
 }
