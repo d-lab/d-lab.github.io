@@ -3,7 +3,31 @@
     "year": 2026,
     "publications": [
       {
-        "citation": "Stefano Civelli, Pietro Bernardelle, Nicol&ograve; Brunello, and Gianluca Demartini. A Shared Geometry of Difficulty in Multilingual Language Models. In: The 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026) - Short paper. San Diego, California, July 2026."
+        "citation": "Pietro Bernardelle, Samaneh Mohtadi, Stefano Civelli, Joel Mackenzie, and Gianluca Demartini. LLMs Encode Relevance as a Layer-Wise Cross-Lingual Signal. In: The 35th International ACM Conference on Knowledge and Information Management (CIKM 2026). Rome, Italy, November 2026."
+      },
+      {
+        "citation": "Samaneh Mohtadi, Pietro Bernardelle, Joel Mackenzie, and Gianluca Demartini. Persona Conditioning as an Assessor-Sensitivity Probe for LLM-Based IR Evaluation. In: The 35th International ACM Conference on Knowledge and Information Management (CIKM 2026). Rome, Italy, November 2026."
+      },
+      {
+        "citation": "Martin Paul Wessel, Timo Spinde, Jürgen Pfeffer, and Gianluca Demartini. Definitional Sensitivity in Media Bias Detection: A Multi-Definition Dataset and Benchmark. In: The 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP 2026) - Findings paper. Budapest, Hungary, October 2026."
+      },
+      {
+        "citation": "Bing Tuo, Tim Miller, and Gianluca Demartini. Easy to Read, Easy to Trust: How Processing Fluency in LLM Explanations Drives Over-Reliance in Hate Speech Moderation. In: The 2026 ACM Conference on Human-AI Complementarity and Alignment (HCOMP 2026). Alexandria, VA, USA, September 2026."
+      },
+      {
+        "citation": "Pietro Bernardelle, Stefano Civelli, Leon Fröhling, Riccardo Lunardi, Kevin Roitero, Gianluca Demartini. Political Ideology Shifts in Large Language Models. In: Information Processing & Management (IPM), Elsevier. August 2026."
+      },
+      {
+        "citation": "Bing Tuo, Brydon Wang, Tim Miller, and Gianluca Demartini. Countering the Risks of AI Overreliance: Leveraging Multi-Agent Debate for Complementary Human-AI Decision-Making in Legal Contexts. In: ACM Transactions on Intelligent Systems and Technology. August 2026."
+      },
+      {
+        "citation": "Ang Li, Jarrod Knibbe, Kiichiro Tatsuzawa, Gianluca Demartini, Stephen Viller, Guy Wallis, Wolfgang Stuerzlinger, and Maxime Cordeil. Investigating 3D Selection Performance While Running in Extended Reality: an In-depth Study of the Effect of Speed. In: IEEE Transactions on Visualization and Computer Graphics. July 2026."
+      },
+      {
+        "citation": "Pietro Bernardelle, Stefano Civelli, Samaneh Mohtadi, Joel Mackenzie, and Gianluca Demartini. LLMs Encode Query-Document Relevance as a Layer-wise Decodable Signal. In: Second Workshop on Explainability in Information Retrieval (WExIR) at SIGIR 2026. Melbourne, Australia, July 2026."
+      },
+      {
+        "citation": "Stefano Civelli, Pietro Bernardelle, Nicolò Brunello, and Gianluca Demartini. A Shared Geometry of Difficulty in Multilingual Language Models. In: The 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026) - Short paper. San Diego, California, July 2026."
       },
       {
         "citation": "Stefano Civelli, Pietro Bernardelle, Nardiena A. Pratama, and Gianluca Demartini. Ideology-Based LLMs for Content Moderation. In: ACM Transactions on Intelligent Systems and Technology (TIST). 2026."
@@ -155,7 +179,7 @@
         "pdfUrl": "https://doi.org/10.1145/3712716.3712719"
       },
       {
-        "citation": "Mads Skipanes, Tollef Emil J&oslashrgensen, Kyle Porter, Gianluca Demartini, and Sule Yildirim Yayilgan. Enhancing Criminal Investigation Analysis with Summarization and Memory-based Retrieval-Augmented Generation: A Comprehensive Evaluation of Real Case Data. In: The 31st International Conference on Computational Linguistics (COLING 2025). Abu Dhabi, UAE, January 2025.",
+        "citation": "Mads Skipanes, Tollef Emil Jørgensen, Kyle Porter, Gianluca Demartini, and Sule Yildirim Yayilgan. Enhancing Criminal Investigation Analysis with Summarization and Memory-based Retrieval-Augmented Generation: A Comprehensive Evaluation of Real Case Data. In: The 31st International Conference on Computational Linguistics (COLING 2025). Abu Dhabi, UAE, January 2025.",
         "pdfLabel": "[pdf]",
         "pdfUrl": "https://aclanthology.org/2025.coling-main.334/"
       }
