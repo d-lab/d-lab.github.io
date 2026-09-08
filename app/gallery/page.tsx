@@ -104,9 +104,6 @@ export default function GalleryPage() {
                   className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.02]"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <span className="absolute bottom-3 right-3 rounded-full border border-white/50 bg-slate-900/60 px-2.5 py-1 text-[0.65rem] font-semibold text-white backdrop-blur-sm">
-                  #{picture.id}
-                </span>
               </div>
             </figure>
           ))}

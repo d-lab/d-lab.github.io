@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 export type GroupPicture = {
-  id: number;
+  id: string;
   src: string;
   alt: string;
   width: number;
@@ -12,12 +12,6 @@ export type GroupPicture = {
 
 const GROUP_PICS_DIR = path.join(process.cwd(), 'public', 'images', 'group_pics');
 const SUPPORTED_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif', '.gif']);
-
-function getIdFromFilename(filename: string): number {
-  const basename = path.parse(filename).name;
-  const parsed = Number.parseInt(basename, 10);
-  return Number.isFinite(parsed) ? parsed : Number.MAX_SAFE_INTEGER;
-}
 
 function readPngSize(buffer: Buffer): { width: number; height: number } | null {
   const pngSignature = [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a];
@@ -107,30 +101,37 @@ function loadGroupPictures(): GroupPicture[] {
     return [];
   }
 
-  const filenames = fs
+  const pictures = fs
     .readdirSync(GROUP_PICS_DIR)
     .filter((filename) => SUPPORTED_EXTENSIONS.has(path.extname(filename).toLowerCase()))
-    .sort((a, b) => {
-      const idA = getIdFromFilename(a);
-      const idB = getIdFromFilename(b);
+    .map((filename) => {
+      const filePath = path.join(GROUP_PICS_DIR, filename);
+      const stats = fs.statSync(filePath);
 
-      if (idA !== idB) {
-        return idA - idB;
+      return {
+        filename,
+        filePath,
+        // birthtime is the closest filesystem equivalent to when the image was
+        // added. Some filesystems do not expose it, so fall back to mtime.
+        timestamp: stats.birthtimeMs > 0 ? stats.birthtimeMs : stats.mtimeMs,
+      };
+    })
+    .sort((a, b) => {
+      if (a.timestamp !== b.timestamp) {
+        return b.timestamp - a.timestamp;
       }
 
-      return a.localeCompare(b);
+      return b.filename.localeCompare(a.filename, undefined, { numeric: true });
     });
 
-  return filenames.map((filename, index) => {
-    const idFromName = getIdFromFilename(filename);
-    const id = Number.isSafeInteger(idFromName) && idFromName !== Number.MAX_SAFE_INTEGER ? idFromName : index + 1;
+  return pictures.map(({ filename, filePath }) => {
     const src = `/images/group_pics/${filename}`;
-    const { width, height } = getImageDimensions(path.join(GROUP_PICS_DIR, filename));
+    const { width, height } = getImageDimensions(filePath);
 
     return {
-      id,
+      id: filename,
       src,
-      alt: `DLab group picture ${id}`,
+      alt: 'DLab group picture',
       width,
       height,
     };
@@ -140,8 +141,8 @@ function loadGroupPictures(): GroupPicture[] {
 export const groupPictures: GroupPicture[] = loadGroupPictures();
 
 export const heroGroupPicture =
-  groupPictures.find((picture) => picture.id === 16) ?? groupPictures[0] ?? {
-    id: 0,
+  groupPictures.find((picture) => picture.src.endsWith('/16.jpg')) ?? groupPictures[0] ?? {
+    id: 'fallback',
     src: '/images/group_pics/1.jpg',
     alt: 'DLab group picture',
     width: 1600,
