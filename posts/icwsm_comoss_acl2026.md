@@ -25,6 +25,10 @@ That idea also came up in conversations about simulating people with language mo
 
 There is another thing I realised at ICWSM: posters are much better than people think. Some researchers are unhappy when they get a poster instead of a presentation, but a poster is where the real interaction happens. You can stop at the part that matters, ask the inconvenient question, and discover whether the claimed contribution still makes sense when someone looks at it closely.
 
+*Los Angeles, around ICWSM.*
+
+![A skate park framed by palm trees in Los Angeles](../../images/blog/LA1.webp) ![A palm-lined street beneath a clear blue sky in Los Angeles](../../images/blog/LA2.webp) ![Palm trees along the beach in Los Angeles](../../images/blog/LA3.webp) ![The Ferris wheel and food stands on Santa Monica Pier](../../images/blog/LA4.webp) ![Sunset over the beach and palms in Los Angeles](../../images/blog/LA5.webp)
+
 ## Como: the system reacts to the measurement
 
 The Summer School in Computational Social Science in Como moved the focus from models to the social systems around them. What I liked about it was that it made explicit something that is sometimes lost when one spends too much time looking at models: the web is not the object of study just because it is there. It is a very large and imperfect instrument for studying people and society.
@@ -49,6 +53,10 @@ I liked this work in the context of the tutorials I attended because it asks a q
 The tutorial on multi-agent systems had the same lesson in another form. Several models discussing with one another can be useful, but they can also become a loop of cyclic sycophancy, with all the agents politely agreeing and not making progress. You need a reason for agents to disagree, good tools, bounded context, and an evaluation that tells the difference between genuine convergence and a very expensive group chat saying “great point”.
 
 The ACL dinner was held on the USS *Midway*, an aircraft carrier booked entirely for the conference. We ate on the deck. It was a strange and nice experience, and a reminder that conferences are not only the sessions.
+
+*San Diego, around ACL.*
+
+![Waves meeting the shore beneath the cliffs in San Diego](../../images/blog/SD1.webp) ![Palm trees against a bright blue San Diego sky](../../images/blog/SD2.webp) ![The Unconditional Surrender statue beside San Diego Bay](../../images/blog/SD3.webp) ![A red classic car overlooking the San Diego coast](../../images/blog/SD4.webp) ![Sunset across a palm-lined street in San Diego](../../images/blog/SD5.webp)
 
 ## What I want to remember
 
