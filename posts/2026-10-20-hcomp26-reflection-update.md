@@ -111,7 +111,7 @@ Four days at the conference left me with many great memories. Here are a few Iâ€
 <p align="center">
   <img src="/images/blog/Bing_1_5.jpg"
        alt="Old Town Alexandria street"
-       height="150">
+       height="200">
   <img src="/images/blog/Bing_1_19.jpg"
        alt="Evening view down a street towards the US Capitol"
        height="150">
