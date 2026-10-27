@@ -6,16 +6,6 @@ date: "2026-10-20"
 
 > *Ultimately, the partnership between humans and AI could end up being more dangerous than AI acting on its own. The idea of keeping a “human in the loop” for high-stakes decisions involving AI may seem comforting, but it assumes that the human in question is actually capable of providing meaningful oversight. The question, therefore, should not only be: “Is there a human in the loop?” but also: **“Is that human cognitively equipped to provide meaningful oversight?”** This question stayed with me throughout HCOMP 2026 and increasingly shaped how I thought about AI safety, human–AI collaboration, and my own research.*
 
-<p align="center">
-  <img src="/images/blog/Bing_1_11.jpg"
-       height="150"
-       alt="US Capitol"
-       style="margin-right: 10px;">
-  <img src="/images/blog/Bing_1_12.jpg"
-       height="150"
-       alt="Vietnam Veterans Memorial">
-</p>
-
 
 The ACM Conference on Human-AI Complementarity and Alignment (HCOMP) is a premier venue for sharing the latest research on human–AI complementarity and alignment. The HCOMP community studies and designs systems that bring together the complementary strengths of human and artificial intelligence to achieve outcomes that neither could accomplish alone, while ensuring that such collaboration is ethical, safe, and intentional.
 
@@ -40,9 +30,6 @@ In search of answers, I joined a workshop titled [**Cognitive Security** (CogSec
 <p align="center">
   <img src="/images/blog/Bing_1_8.jpg"
        alt="A speaker at the Cognitive Security for Human–AI Systems workshop"
-       height="150">
-  <img src="/images/blog/Bing_1_16.png"
-       alt="HCOMP 2026 workshops sign outside the session room"
        height="150">
   <img src="/images/blog/Bing_1_17.png"
        alt="Group photo of the CogSec workshop participants"
@@ -79,9 +66,6 @@ The question, then, is **not simply whether a human–AI team outperforms humans
        height="150">
   <img src="/images/blog/Bing_1_7.jpg"
        alt="HCOMP 2026 Best Paper Honorable Mention certificate"
-       height="150">
-  <img src="/images/blog/Bing_1_10.jpg"
-       alt="The HCOMP 2026 poster session"
        height="150">
 </p>
 
