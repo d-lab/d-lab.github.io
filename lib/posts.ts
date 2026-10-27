@@ -22,7 +22,7 @@ export async function getPostBySlug(slug: string) {
   const processedContent = await unified()
     .use(remarkParse)
     .use(remarkMath)
-    .use(remarkRehype, { allowDangerousHtml: true }) //new added to support rendering raw HTML
+    .use(remarkRehype, { allowDangerousHtml: true })  //new added to support rendering raw HTML
     .use(rehypeRaw)// new added to support rendering raw HTML
     //.use(remarkRehype)
     .use(rehypeKatex)
