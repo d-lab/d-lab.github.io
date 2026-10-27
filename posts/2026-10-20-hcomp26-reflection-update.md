@@ -1,11 +1,9 @@
 ---
-layout: post
 title: "Human Oversight Is Not Enough: Reflections from HCOMP 2026 on the Risks of AI-Assisted Decision-Making"
 date: 2026-10-20
-description: 'Asking “Is there a human in the loop?” is not enough — we also need to ask whether that human is cognitively equipped to provide meaningful oversight.'
-tags: [conference, hcomp, human-ai-collaboration, ai-safety, cognitive-security]
-categories: blog
+author: Bing Tuo
 ---
+
 
 > *Ultimately, the partnership between humans and AI could end up being more dangerous than AI acting on its own. The idea of keeping a “human in the loop” for high-stakes decisions involving AI may seem comforting, but it assumes that the human in question is actually capable of providing meaningful oversight. The question, therefore, should not only be: “Is there a human in the loop?” but also: **“Is that human cognitively equipped to provide meaningful oversight?”** This question stayed with me throughout HCOMP 2026 and increasingly shaped how I thought about AI safety, human–AI collaboration, and my own research.*
 
