@@ -7,11 +7,11 @@ date: "2026-10-20"
 > *Ultimately, the partnership between humans and AI could end up being more dangerous than AI acting on its own. The idea of keeping a “human in the loop” for high-stakes decisions involving AI may seem comforting, but it assumes that the human in question is actually capable of providing meaningful oversight. The question, therefore, should not only be: “Is there a human in the loop?” but also: **“Is that human cognitively equipped to provide meaningful oversight?”** This question stayed with me throughout HCOMP 2026 and increasingly shaped how I thought about AI safety, human–AI collaboration, and my own research.*
 
 <p align="center">
-  <img src="/public/images/blog/Bing_1_11.jpg"
+  <img src="/images/blog/Bing_1_11.jpg"
        height="250"
        alt="US Capitol"
        style="margin-right: 10px;">
-  <img src="/public/images/blog/Bing_1_12.jpg"
+  <img src="/images/blog/Bing_1_12.jpg"
        height="250"
        alt="Vietnam Veterans Memorial">
 </p>
@@ -38,13 +38,13 @@ What struck me about this case is that it represents a very different form of AI
 In search of answers, I joined a workshop titled [**Cognitive Security** (CogSec) for Human–AI Systems](https://www.cstf.dev/) organised by a group of Stanford researchers. CogSec frames cognitive security—the integrity of the conditions under which individuals and groups can reason for themselves—as an emerging research agenda. The workshop was anchored by a hands-on session focused on developing the Cognitive Vulnerability and Mitigation Catalog (CVMC). The CVMC provides a structured schema that connects AI affordances with associated cognitive vulnerabilities and pairs them with candidate mitigations, evaluation metrics, burden-and-equity considerations, and governance mechanisms. Through this framework, the workshop sought not only to identify how AI might shape or compromise human reasoning, but also to develop systematic approaches for preserving human agency and strengthening decision resilience in increasingly capable human–AI systems.
 
 <p align="center">
-  <img src="/public/images/blog/Bing_1_8.jpg"
+  <img src="/images/blog/Bing_1_8.jpg"
        alt="A speaker at the Cognitive Security for Human–AI Systems workshop"
        height="200">
-  <img src="/public/images/blog/Bing_1_16.png"
+  <img src="/images/blog/Bing_1_16.png"
        alt="HCOMP 2026 workshops sign outside the session room"
        height="200">
-  <img src="/public/images/blog/Bing_1_17.png"
+  <img src="/images/blog/Bing_1_17.png"
        alt="Group photo of the CogSec workshop participants"
        height="200">
 </p>
@@ -66,7 +66,7 @@ Research on [human–human collective intelligence](https://www.science.org/doi/
 Luckily, for many specialised tasks, of course, such endpoint has not yet been reached. Training data may remain scarce or imperfect, and AI may still lack the contextual knowledge required to dominate the task. More importantly, in high-stakes domains, humans may need to remain involved for reasons that extend beyond predictive performance—including accountability, legitimacy, ethical judgement, contestability, and the preservation of human agency.
 
 <p align="center">
-  <img src="/public/images/blog/Bing_1_1.png" width="500">
+  <img src="/images/blog/Bing_1_1.png" width="500">
 </p>
 
 These should be our main battlefields of our research.
@@ -74,22 +74,22 @@ These should be our main battlefields of our research.
 The question, then, is **not simply whether a human–AI team outperforms humans or AI alone, but whether the collaboration preserves humans’ capacity to reason independently, recognise AI errors, intervene effectively, and remain meaningfully responsible for decisions.** Accuracy, therefore, cannot be the sole optimisation target. A system may improve task performance while eroding human judgement—the ability to question recommendations, detect failures, and make independent decisions. From a cognitive-security perspective, preserving these capabilities matters even when overall performance improves.
 
 <p align="center">
-  <img src="/public/images/blog/Bing_1_18.jpg"
+  <img src="/images/blog/Bing_1_18.jpg"
        alt="Presenting Easy to Read, Easy to Trust in the main session"
        height="300">
-  <img src="/public/images/blog/Bing_1_7.jpg"
+  <img src="/images/blog/Bing_1_7.jpg"
        alt="HCOMP 2026 Best Paper Honorable Mention certificate"
        height="300">
-  <img src="/public/images/blog/Bing_1_10.jpg"
+  <img src="/images/blog/Bing_1_10.jpg"
        alt="The HCOMP 2026 poster session"
        height="300">
 </p>
 
 <p align="center">
-  <img src="/public/images/blog/Bing_1_2.jpg"
+  <img src="/images/blog/Bing_1_2.jpg"
        alt="The main session hall"
        height="250">
-  <img src="/public/images/blog/Bing_1_6.png"
+  <img src="/images/blog/Bing_1_6.png"
        alt="Attendees mingling at the conference reception"
        height="250">
 </p>
@@ -109,16 +109,16 @@ To sum up, in the context of rapid advances in AI, a human-centred principle is 
 Four days at the conference left me with many great memories. Here are a few I’d like to share, especially with those who are new to academic conferences.
 
 <p align="center">
-  <img src="/public/images/blog/Bing_1_5.jpg"
+  <img src="/images/blog/Bing_1_5.jpg"
        alt="Old Town Alexandria street"
        height="200">
-  <img src="/public/images/blog/Bing_1_19.jpg"
+  <img src="/images/blog/Bing_1_19.jpg"
        alt="Evening view down a street towards the US Capitol"
        height="200">
-  <img src="/public/images/blog/Bing_1_14.jpg"
+  <img src="/images/blog/Bing_1_14.jpg"
        alt="A Washington, DC Metro station"
        height="200">
-  <img src="/public/images/blog/Bing_1_15.jpg"
+  <img src="/images/blog/Bing_1_15.jpg"
        alt="The Lincoln Memorial statue and columns"
        height="200">
 </p>
@@ -129,16 +129,16 @@ Four days at the conference left me with many great memories. Here are a few I�
 
 
 <p align="center">
-  <img src="/public/images/blog/Bing_1_3.jpg"
+  <img src="/images/blog/Bing_1_3.jpg"
        alt="View of the Washington Monument between the Lincoln Memorial columns"
        height="250">
-  <img src="/public/images/blog/Bing_1_13.jpg"
+  <img src="/images/blog/Bing_1_13.jpg"
        alt="The guard at the Tomb of the Unknown Soldier, Arlington"
        height="250">
-  <img src="/public/images/blog/Bing_1_4.jpg"
+  <img src="/images/blog/Bing_1_4.jpg"
        alt="Arlington House on the hill above Arlington National Cemetery"
        height="250">
-  <img src="/public/images/blog/Bing_1_9.jpg"
+  <img src="/images/blog/Bing_1_9.jpg"
        alt="Acorns on a ledge overlooking Arlington National Cemetery"
        height="250">
 </p>
