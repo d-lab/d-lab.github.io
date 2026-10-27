@@ -1,4 +1,6 @@
 // posts.ts
+
+import rehypeRaw from 'rehype-raw'; //new added to support rendering raw HTML
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -20,7 +22,9 @@ export async function getPostBySlug(slug: string) {
   const processedContent = await unified()
     .use(remarkParse)
     .use(remarkMath)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true }) //new added to support rendering raw HTML
+    .use(rehypeRaw)// new added to support rendering raw HTML
+    //.use(remarkRehype)
     .use(rehypeKatex)
     .use(rehypeStringify)
     .process(content);
