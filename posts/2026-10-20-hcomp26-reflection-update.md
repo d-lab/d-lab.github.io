@@ -8,11 +8,11 @@ date: "2026-10-20"
 
 <p align="center">
   <img src="/images/blog/Bing_1_11.jpg"
-       height="250"
+       height="150"
        alt="US Capitol"
        style="margin-right: 10px;">
   <img src="/images/blog/Bing_1_12.jpg"
-       height="250"
+       height="150"
        alt="Vietnam Veterans Memorial">
 </p>
 
@@ -40,13 +40,13 @@ In search of answers, I joined a workshop titled [**Cognitive Security** (CogSec
 <p align="center">
   <img src="/images/blog/Bing_1_8.jpg"
        alt="A speaker at the Cognitive Security for Human–AI Systems workshop"
-       height="200">
+       height="150">
   <img src="/images/blog/Bing_1_16.png"
        alt="HCOMP 2026 workshops sign outside the session room"
-       height="200">
+       height="150">
   <img src="/images/blog/Bing_1_17.png"
        alt="Group photo of the CogSec workshop participants"
-       height="200">
+       height="150">
 </p>
 
 My first impression of the workshop was the remarkable diversity of the participants’ backgrounds. The room brought together frontline lawyers and doctors, educators, government officials, intelligence professionals, social scientists, psychologists, military personnel, representatives from philanthropic organisations, and even an engineer involved in designing an AI-assisted warfare decision-making system for Australia’s future nuclear-powered submarine programme. This diversity gave me a rare opportunity to examine my own research from perspectives far beyond my usual disciplinary context. It was also deeply encouraging: across these very different domains, I could genuinely feel the importance and practical relevance of the questions my work is trying to address.
@@ -76,22 +76,22 @@ The question, then, is **not simply whether a human–AI team outperforms humans
 <p align="center">
   <img src="/images/blog/Bing_1_18.jpg"
        alt="Presenting Easy to Read, Easy to Trust in the main session"
-       height="300">
+       height="150">
   <img src="/images/blog/Bing_1_7.jpg"
        alt="HCOMP 2026 Best Paper Honorable Mention certificate"
-       height="300">
+       height="150">
   <img src="/images/blog/Bing_1_10.jpg"
        alt="The HCOMP 2026 poster session"
-       height="300">
+       height="150">
 </p>
 
 <p align="center">
   <img src="/images/blog/Bing_1_2.jpg"
        alt="The main session hall"
-       height="250">
+       height="150">
   <img src="/images/blog/Bing_1_6.png"
        alt="Attendees mingling at the conference reception"
-       height="250">
+       height="150">
 </p>
 
 In the main session, I presented our latest work on how the processing fluency of AI explanations can increase human trust and reliance on AI, and explained the underlying cognitive mechanism through the lens of the meta-reasoning framework. When we reason, we are constantly making a second-order decision: **should I keep thinking, or is what I have seen good enough?** This decision is not determined solely by actual accuracy. Instead, we rely on heuristic cues such as *processing fluency*—how easy information feels to understand. Fluent information can generate a “feeling of rightness” (FOR), which signals to our slower, analytical reasoning system that further scrutiny may not be necessary. The problem is that fluency is a fallible cue: something can *feel* right because of how it is presented, rather than because it is actually correct.
@@ -111,16 +111,16 @@ Four days at the conference left me with many great memories. Here are a few I�
 <p align="center">
   <img src="/images/blog/Bing_1_5.jpg"
        alt="Old Town Alexandria street"
-       height="200">
+       height="150">
   <img src="/images/blog/Bing_1_19.jpg"
        alt="Evening view down a street towards the US Capitol"
-       height="200">
+       height="150">
   <img src="/images/blog/Bing_1_14.jpg"
        alt="A Washington, DC Metro station"
-       height="200">
+       height="150">
   <img src="/images/blog/Bing_1_15.jpg"
        alt="The Lincoln Memorial statue and columns"
-       height="200">
+       height="150">
 </p>
 
 **Talking to people.** My favourite part of the conference was actually the poster session—not only because we had a great session host, but because it gave us the opportunity to interact with people and exchange ideas in real time. The journey of doing research can often feel lonely, and the positive feedback loop is usually very long. Having friends who share similar interests and can relate to what you are going through makes the journey much more enjoyable. Talking with them not only encouraged me, but also sparked many new ideas. I was a little shy at the beginning, but after starting a few conversations, I quickly realised how awesome and supportive everyone was. I truly believe that some of the people I met there will become lifelong friends.
@@ -131,16 +131,16 @@ Four days at the conference left me with many great memories. Here are a few I�
 <p align="center">
   <img src="/images/blog/Bing_1_3.jpg"
        alt="View of the Washington Monument between the Lincoln Memorial columns"
-       height="250">
+       height="150">
   <img src="/images/blog/Bing_1_13.jpg"
        alt="The guard at the Tomb of the Unknown Soldier, Arlington"
-       height="250">
+       height="150">
   <img src="/images/blog/Bing_1_4.jpg"
        alt="Arlington House on the hill above Arlington National Cemetery"
-       height="250">
+       height="150">
   <img src="/images/blog/Bing_1_9.jpg"
        alt="Acorns on a ledge overlooking Arlington National Cemetery"
-       height="250">
+       height="150">
 </p>
 
 On a lighter note, I was almost hit by an acorn thrown down by a squirrel. I wanted to keep it as a souvenir—too bad I couldn’t bring it back to Australia!
