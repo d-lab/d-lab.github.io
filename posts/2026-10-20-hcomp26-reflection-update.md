@@ -1,7 +1,7 @@
 ---
 title: "Human Oversight Is Not Enough: Reflections from HCOMP 2026 on the Risks of AI-Assisted Decision-Making"
-date: 2026-10-20
-author: Bing Tuo
+date: "2026-10-20"
+author: "Bing Tuo"
 ---
 
 
