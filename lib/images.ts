@@ -6,6 +6,9 @@ export type WebImage = {
   src: string;
   width: number;
   height: number;
+  // Only on the homepage hero: every generated size, and a tiny inlined blurred preview.
+  srcSet?: { src: string; width: number }[];
+  placeholder?: string;
 };
 
 const MANIFEST_PATH = path.join(process.cwd(), 'data', 'generated', 'images.json');

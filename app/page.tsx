@@ -105,14 +105,27 @@ export default function Home() {
         aria-labelledby="home-title"
         className="relative overflow-hidden bg-brand lg:h-[clamp(600px,50vw,min(calc(100svh-3.5rem),880px))]"
       >
-        <div className="relative aspect-[2/1] lg:absolute lg:inset-0 lg:aspect-auto">
-          <Image
+        <div className="relative aspect-[2/1] overflow-hidden lg:absolute lg:inset-0 lg:aspect-auto">
+          {/* A tiny blurred copy inlined in the page shows instantly while the photo loads. */}
+          {heroGroupPicture.placeholder ? (
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 scale-110 bg-cover bg-[center_30%] blur-2xl"
+              style={{ backgroundImage: `url(${heroGroupPicture.placeholder})` }}
+            />
+          ) : null}
+          {/* A plain img with srcSet lets each screen download only the size it needs;
+              next/image cannot generate sizes in a static export. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src={withBasePath(heroGroupPicture.src)}
-            alt={heroGroupPicture.alt}
-            fill
-            priority
+            srcSet={heroGroupPicture.srcSet?.map(({ src, width }) => `${withBasePath(src)} ${width}w`).join(', ')}
             sizes="100vw"
-            className="object-cover object-[center_30%]"
+            alt={heroGroupPicture.alt}
+            width={heroGroupPicture.width}
+            height={heroGroupPicture.height}
+            fetchPriority="high"
+            className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
           />
           <div className="hero-overlay absolute inset-0" aria-hidden="true" />
         </div>

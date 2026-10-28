@@ -2,14 +2,11 @@ import 'server-only';
 import fs from 'node:fs';
 import path from 'node:path';
 import gallery from './gallery.json';
-import { getWebImage } from '@/lib/images';
+import { getWebImage, type WebImage } from '@/lib/images';
 
-export type GroupPicture = {
+export type GroupPicture = WebImage & {
   id: string;
-  src: string;
   alt: string;
-  width: number;
-  height: number;
 };
 
 type GalleryEntry = {

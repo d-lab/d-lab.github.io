@@ -16,14 +16,16 @@ const SOURCE_FOLDERS = ["group_pics", "blog"];
 const SUPPORTED_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
 const MAX_WIDTH = 1600;
 const QUALITY = 78;
-// The homepage hero spans the full screen width, so it gets a larger, higher-quality copy
-// that stays sharp on 4K and high-density displays.
-const HERO_WIDTH = 3840;
-const HERO_QUALITY = 85;
+// The homepage hero spans the full screen width. It gets several sizes so each screen
+// downloads only what it needs (phones a small copy, 4K screens the largest), plus a tiny
+// blurred placeholder that is inlined in the page and shows while the photo loads.
+const HERO_WIDTHS = [828, 1280, 1920, 2560, 3200, 3840];
+const HERO_QUALITY = 80;
+const PLACEHOLDER_WIDTH = 32;
 const GALLERY_PATH = path.join(ROOT, "data", "gallery.json");
 // Copies are regenerated whenever these settings change.
 const SETTINGS_PATH = path.join(ROOT, "data", "generated", "image-settings.json");
-const SETTINGS = JSON.stringify({ MAX_WIDTH, QUALITY, HERO_WIDTH, HERO_QUALITY, keepIccProfile: true });
+const SETTINGS = JSON.stringify({ MAX_WIDTH, QUALITY, HERO_WIDTHS, HERO_QUALITY, PLACEHOLDER_WIDTH, keepIccProfile: true });
 
 let forceRegenerate = false;
 
@@ -79,12 +81,35 @@ async function main() {
   }
 
   const { hero } = JSON.parse(await fs.readFile(GALLERY_PATH, "utf8"));
-  const [heroKey, heroEntry] = await optimizeImage("group_pics", hero.file, {
-    maxWidth: HERO_WIDTH,
-    quality: HERO_QUALITY,
-    suffix: "-hero",
-  });
-  manifest[heroKey] = heroEntry;
+  const heroSizes = [];
+  for (const width of HERO_WIDTHS) {
+    const [, entry] = await optimizeImage("group_pics", hero.file, {
+      maxWidth: width,
+      quality: HERO_QUALITY,
+      suffix: `-hero-${width}`,
+    });
+    heroSizes.push(entry);
+  }
+  const placeholder = await sharp(path.join(PUBLIC_DIR, "images", "group_pics", hero.file))
+    .resize({ width: PLACEHOLDER_WIDTH })
+    .webp({ quality: 50 })
+    .toBuffer();
+  const largestHero = heroSizes[heroSizes.length - 1];
+  manifest[`/images/group_pics/${hero.file}#hero`] = {
+    ...largestHero,
+    srcSet: heroSizes.map(({ src, width }) => ({ src, width })),
+    placeholder: `data:image/webp;base64,${placeholder.toString("base64")}`,
+  };
+
+  // Remove copies left over from earlier settings or deleted photos.
+  const currentFiles = new Set(Object.values(manifest).flatMap((entry) => [entry.src, ...(entry.srcSet ?? []).map(({ src }) => src)]));
+  for (const folder of SOURCE_FOLDERS) {
+    for (const filename of await fs.readdir(path.join(OUTPUT_DIR, folder))) {
+      if (!currentFiles.has(`/images/web/${folder}/${filename}`)) {
+        await fs.rm(path.join(OUTPUT_DIR, folder, filename));
+      }
+    }
+  }
 
   await fs.mkdir(path.dirname(MANIFEST_PATH), { recursive: true });
   await fs.writeFile(MANIFEST_PATH, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");

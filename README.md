@@ -19,7 +19,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000). To check the production output locally, run `npm run build`; the static site is written to `out/`.
 
-Both `npm run dev` and `npm run build` first run `scripts/optimize-images.js`, which writes web-sized WebP copies of gallery and blog photographs (up to 1600px wide, keeping each photo's colour profile, and a 3840px copy of the homepage hero) to `public/images/web/` and their dimensions to `data/generated/images.json`. Both outputs are git-ignored and rebuilt as needed. The originals stay in `public/images/` untouched. Run `npm run optimize:images` to regenerate them by hand.
+Both `npm run dev` and `npm run build` first run `scripts/optimize-images.js`, which writes web-sized WebP copies of gallery and blog photographs (up to 1600px wide, keeping each photo's colour profile; the homepage hero gets six sizes from 828px to 3840px, so each screen downloads only what it needs, plus a tiny blurred preview inlined in the page) to `public/images/web/` and their dimensions to `data/generated/images.json`. Both outputs are git-ignored and rebuilt as needed. The originals stay in `public/images/` untouched. Run `npm run optimize:images` to regenerate them by hand.
 
 ## Updating content
 
