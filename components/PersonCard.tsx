@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { getWebsite, type Person } from '@/lib/people';
 import { withBasePath } from '@/lib/withBasePath';
 
-const RESERVED_FIELDS = new Set(['name', 'role', 'image', 'isHeadOfLab', 'isAlumni', 'email', 'focus', 'website']);
+const RESERVED_FIELDS = new Set(['name', 'role', 'image', 'isHeadOfLab', 'isAlumni', 'email', 'focus', 'website', 'publicationNames']);
 
 const formatFieldLabel = (key: string) =>
   key

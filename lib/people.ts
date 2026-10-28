@@ -9,6 +9,8 @@ export type Person = {
   email?: string;
   focus?: string;
   website?: string;
+  // Other spellings of the name used in citations, e.g. ["Linh Le"].
+  publicationNames?: string[];
   [key: string]: unknown;
 };
 
@@ -32,9 +34,17 @@ export const getWebsite = (person: Person) => {
 export const currentMembers = people.filter((person) => !person.isAlumni).sort(byHeadThenSurname);
 export const alumni = people.filter((person) => person.isAlumni).sort(bySurname);
 
+const stripTitle = (name: string) => name.replace(/^(prof|dr)\.?\s+/i, '').trim();
+
 // Matches a blog author to a profile, ignoring titles such as "Prof.".
 export const findPersonByName = (name?: string) => {
   if (!name) return undefined;
-  const normalize = (value: string) => value.replace(/^(prof|dr)\.?\s+/i, '').trim().toLowerCase();
+  const normalize = (value: string) => stripTitle(value).toLowerCase();
   return people.find((person) => normalize(person.name) === normalize(name));
 };
+
+// The display name without titles, e.g. "Gianluca Demartini" for "Prof. Gianluca Demartini".
+export const getPlainName = (person: Person) => stripTitle(person.name);
+
+// Every spelling of a person's name that may appear in a citation's author list.
+export const getPublicationNames = (person: Person) => [getPlainName(person), ...(person.publicationNames ?? [])];

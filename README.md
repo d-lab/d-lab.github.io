@@ -39,6 +39,7 @@ Edit `data/people.json` and add a portrait to `public/images/people`.
 | `focus` | no | One-sentence research focus. |
 | `isHeadOfLab` | no | Pins the entry to the top. |
 | `isAlumni` | no | Moves the entry to the alumni section. |
+| `publicationNames` | no | Other spellings of the name used in citations, for example `["Linh Le"]`, so the Publications author filter finds every paper. |
 
 Any other simple field is displayed as a labelled attribute on the profile. Current members are sorted by surname automatically.
 
@@ -53,6 +54,13 @@ npm run sync:publications -- --help
 ```
 
 The sync overwrites the whole file. Fix titles, authors, or PDF links at the source page rather than editing the JSON by hand, otherwise the next sync discards the change.
+
+The Publications page has a search box and filters by topic and by DLab author. Both filters are computed from the citation text, so they keep working after every sync:
+
+- **Topics** come from keyword patterns in `data/publicationTopics.ts`, matched against each paper's title and venue. Edit a pattern to change which papers a topic includes, or add a new topic.
+- **Authors** are DLab members (current and alumni) found in a citation's author list. If a person's papers use a different spelling of their name, add it to `publicationNames` in `data/people.json`.
+
+Filters are kept in the page address (for example `/publications/?author=Stefano+Civelli`), so a filtered list can be shared as a link.
 
 ### Blog posts
 

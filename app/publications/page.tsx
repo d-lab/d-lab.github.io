@@ -1,7 +1,9 @@
 import { CollectionPage } from '@/components/PageFrame';
-import PublicationEntry from '@/components/PublicationEntry';
+import PublicationsBrowser from '@/components/PublicationsBrowser';
 import StructuredData from '@/components/StructuredData';
-import { publicationGroups } from '@/lib/publications';
+import { publicationTopics } from '@/data/publicationTopics';
+import { alumni, currentMembers, getPlainName, getPublicationNames, type Person } from '@/lib/people';
+import { buildPublicationIndex } from '@/lib/publications';
 import { canonicalUrl, createPageMetadata, organizationId, siteName } from '@/lib/site';
 
 const description =
@@ -12,6 +14,13 @@ export const metadata = createPageMetadata({
   description,
   path: '/publications/',
 });
+
+const toMemberNames = (person: Person) => ({ name: getPlainName(person), publicationNames: getPublicationNames(person) });
+
+const { records, topicOptions, memberOptions } = buildPublicationIndex(publicationTopics, [
+  { label: 'Current members', members: currentMembers.map(toMemberNames) },
+  { label: 'Alumni', members: alumni.map(toMemberNames) },
+]);
 
 export default function PublicationsPage() {
   return (
@@ -26,43 +35,8 @@ export default function PublicationsPage() {
           about: { '@id': organizationId },
         }}
       />
-
-      <nav aria-label="Jump to year" className="mb-14 flex flex-wrap gap-x-1 gap-y-1">
-        {publicationGroups.map((group) => (
-          <a
-            key={group.year}
-            href={`#year-${group.year}`}
-            className="inline-flex min-h-11 items-center px-2 font-mono text-sm text-muted transition-colors hover:text-accent"
-          >
-            {group.year}
-          </a>
-        ))}
-      </nav>
-
-      <div className="space-y-16">
-        {publicationGroups.map((group) => (
-          <section
-            key={group.year}
-            id={`year-${group.year}`}
-            aria-labelledby={`year-${group.year}-heading`}
-            className="grid scroll-mt-20 gap-6 lg:grid-cols-[9rem_minmax(0,46rem)] lg:gap-10"
-          >
-            <h2
-              id={`year-${group.year}-heading`}
-              className="font-mono text-xl font-medium tabular-nums text-muted lg:sticky lg:top-20 lg:self-start"
-            >
-              {group.year}
-            </h2>
-            <ul className="space-y-7">
-              {group.publications.map((publication, index) => (
-                <li key={`${group.year}-${index}`}>
-                  <PublicationEntry publication={publication} />
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-      </div>
+      {/* The full list is rendered into the static HTML; filtering happens in the browser. */}
+      <PublicationsBrowser records={records} topicOptions={topicOptions} memberOptions={memberOptions} />
     </CollectionPage>
   );
 }
