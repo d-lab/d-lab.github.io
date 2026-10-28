@@ -223,6 +223,23 @@ body {
   animation: lightbox-enter 180ms var(--ease-out-quart);
 }
 
+/* Filter dropdown menus on the Publications page. */
+@keyframes dropdown-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.dropdown-enter {
+  animation: dropdown-enter 160ms var(--ease-out-quart);
+}
+
 /* Homepage entrance. Content starts visible if animations are unsupported. */
 @keyframes home-enter {
   from {

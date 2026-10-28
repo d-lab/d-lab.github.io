@@ -55,7 +55,7 @@ npm run sync:publications -- --help
 
 The sync overwrites the whole file. Fix titles, authors, or PDF links at the source page rather than editing the JSON by hand, otherwise the next sync discards the change.
 
-The Publications page has a search box and a sidebar of tick boxes for topics, DLab authors, and venues. Ticking several options in one group shows papers matching any of them; different groups narrow each other. All three are computed from the citation text, so they keep working after every sync:
+The Publications page has a search box and three filter dropdowns: topics, DLab authors, and venues. Ticking several options in one dropdown shows papers matching any of them; different dropdowns narrow each other. All three are computed from the citation text, so they keep working after every sync:
 
 - **Topics** come from keyword patterns in `data/publicationTopics.ts`, matched against each paper's title and venue. Edit a pattern to change which papers a topic includes, or add a new topic.
 - **Authors** are DLab members (current and alumni) found in a citation's author list. If a person's papers use a different spelling of their name, add it to `publicationNames` in `data/people.json`.

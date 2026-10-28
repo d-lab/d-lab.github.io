@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useMemo, useState, type ChangeEvent, type ReactNode } from 'react';
-import { Search, SlidersHorizontal, X } from 'lucide-react';
+import { useEffect, useMemo, useState, type ChangeEvent } from 'react';
+import { Search } from 'lucide-react';
+import FilterDropdown from '@/components/FilterDropdown';
 import PublicationEntry from '@/components/PublicationEntry';
 import type { FilterKey, FilterOption, PublicationRecord } from '@/lib/publications';
 
@@ -17,57 +18,16 @@ type Selections = Record<FilterKey, string[]>;
 const EMPTY_SELECTIONS: Selections = { topics: [], members: [], venues: [] };
 const URL_KEYS: Record<FilterKey, string> = { topics: 'topic', members: 'author', venues: 'venue' };
 const FILTER_KEYS = Object.keys(URL_KEYS) as FilterKey[];
-const VISIBLE_VENUES = 10;
 
 // Lowercase and drop accents so "frohling" finds "Fröhling".
 const normalize = (text: string) => text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
-type CheckboxListProps = {
-  options: FilterOption[];
-  selected: string[];
-  counts: Map<string, number>;
-  onToggle: (name: string) => void;
-};
-
-const CheckboxList = ({ options, selected, counts, onToggle }: CheckboxListProps) => (
-  <ul className="space-y-0.5">
-    {options.map((option) => {
-      const isChecked = selected.includes(option.name);
-      const count = counts.get(option.name) ?? 0;
-
-      return (
-        <li key={option.name}>
-          <label
-            className={`flex min-h-11 cursor-pointer items-center gap-3 rounded-md px-1 text-sm transition-colors duration-150 hover:text-accent lg:min-h-9 ${
-              count === 0 && !isChecked ? 'text-muted' : 'text-foreground'
-            }`}
-          >
-            <input
-              type="checkbox"
-              checked={isChecked}
-              onChange={() => onToggle(option.name)}
-              className="h-4 w-4 shrink-0 rounded border-border-strong accent-accent"
-            />
-            <span className="min-w-0 flex-1 leading-5">{option.name}</span>
-          </label>
-        </li>
-      );
-    })}
-  </ul>
-);
-
-const FilterGroup = ({ legend, children }: { legend: string; children: ReactNode }) => (
-  <fieldset className="border-t border-border pt-5 first:border-t-0 first:pt-0">
-    <legend className="float-left mb-3 w-full font-mono text-sm uppercase tracking-[0.1em] text-muted">{legend}</legend>
-    <div className="clear-both">{children}</div>
-  </fieldset>
-);
+const toNames = (options: FilterOption[]) => options.map((option) => option.name);
 
 export default function PublicationsBrowser({ records, topicOptions, memberOptions, venueOptions }: PublicationsBrowserProps) {
   const [query, setQuery] = useState('');
   const [selections, setSelections] = useState<Selections>(EMPTY_SELECTIONS);
-  const [showAllVenues, setShowAllVenues] = useState(false);
-  const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<FilterKey | null>(null);
   // The URL is only written after it has been read, so a shared link is not wiped on load.
   const [hasReadUrl, setHasReadUrl] = useState(false);
 
@@ -97,7 +57,7 @@ export default function PublicationsBrowser({ records, topicOptions, memberOptio
     [records],
   );
 
-  // Ticked options within a group widen the results (any of them); groups narrow each other.
+  // Ticked options within a menu widen the results (any of them); menus narrow each other.
   const matches = useMemo(() => {
     const terms = normalize(query).split(/\s+/).filter(Boolean);
 
@@ -113,8 +73,8 @@ export default function PublicationsBrowser({ records, topicOptions, memberOptio
 
   const filteredRecords = useMemo(() => records.filter((record) => matches(record)), [records, matches]);
 
-  // How many results each option would give alongside the other groups' choices;
-  // options that would give none are greyed out.
+  // How many results each option would give alongside the other menus' choices;
+  // options that would give none are dimmed.
   const counts = useMemo(() => {
     const result = {} as Record<FilterKey, Map<string, number>>;
     FILTER_KEYS.forEach((key) => {
@@ -134,12 +94,7 @@ export default function PublicationsBrowser({ records, topicOptions, memberOptio
     return Array.from(byYear.entries()).map(([year, publications]) => ({ year, publications }));
   }, [filteredRecords]);
 
-  const activeFilters = FILTER_KEYS.flatMap((key) => selections[key].map((value) => ({ key, value })));
-  const isFiltered = query !== '' || activeFilters.length > 0;
-
-  const visibleVenues = showAllVenues
-    ? venueOptions
-    : venueOptions.filter((option, index) => index < VISIBLE_VENUES || selections.venues.includes(option.name));
+  const isFiltered = query !== '' || FILTER_KEYS.some((key) => selections[key].length > 0);
 
   const handleQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
@@ -152,163 +107,131 @@ export default function PublicationsBrowser({ records, topicOptions, memberOptio
     }));
   };
 
-  const handleClear = () => {
+  const handleClearGroup = (key: FilterKey) => () => {
+    setSelections((current) => ({ ...current, [key]: [] }));
+  };
+
+  const handleClearAll = () => {
     setQuery('');
     setSelections(EMPTY_SELECTIONS);
   };
 
-  const handlePanelToggle = () => {
-    setIsPanelOpen(!isPanelOpen);
+  const handleOpenChange = (key: FilterKey) => (isOpen: boolean) => {
+    setOpenMenu((current) => (isOpen ? key : current === key ? null : current));
   };
 
-  const handleVenueToggle = () => {
-    setShowAllVenues(!showAllVenues);
-  };
+  const menus: { key: FilterKey; label: string; groups: { label?: string; options: string[] }[]; searchPlaceholder?: string }[] = [
+    { key: 'topics', label: 'Topics', groups: [{ options: toNames(topicOptions) }] },
+    {
+      key: 'members',
+      label: 'DLab authors',
+      groups: memberOptions.map((group) => ({ label: group.label, options: toNames(group.options) })),
+      searchPlaceholder: 'Find a person…',
+    },
+    { key: 'venues', label: 'Venues', groups: [{ options: toNames(venueOptions) }], searchPlaceholder: 'Find a venue…' },
+  ];
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-12">
-      {/* First in the page so the Filters button sits above the search on phones; shown on the right on wide screens. */}
-      <aside aria-label="Filter publications" className="lg:sticky lg:top-20 lg:order-last lg:self-start">
-        <button
-          type="button"
-          onClick={handlePanelToggle}
-          aria-expanded={isPanelOpen}
-          aria-controls="publication-filters"
-          className="flex min-h-11 w-full items-center justify-between rounded-xl border border-border bg-surface-tint px-5 text-sm font-semibold lg:hidden"
-        >
-          <span className="inline-flex items-center gap-2">
-            <SlidersHorizontal className="h-4 w-4" aria-hidden="true" />
-            Filters{activeFilters.length > 0 ? ` (${activeFilters.length})` : ''}
-          </span>
-          <span className="font-mono text-sm font-normal text-muted">{isPanelOpen ? 'Hide' : 'Show'}</span>
-        </button>
-
-        <div
-          id="publication-filters"
-          className={`${isPanelOpen ? 'mt-3 block' : 'hidden'} space-y-6 rounded-xl border border-border bg-surface-tint p-6 lg:mt-0 lg:block lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto`}
-        >
-          <FilterGroup legend="Topics">
-            <CheckboxList options={topicOptions} selected={selections.topics} counts={counts.topics} onToggle={handleToggle('topics')} />
-          </FilterGroup>
-
-          <FilterGroup legend="DLab authors">
-            <div className="space-y-4">
-              {memberOptions.map((group) => (
-                <div key={group.label}>
-                  <p className="mb-1 px-1 text-sm font-semibold">{group.label}</p>
-                  <CheckboxList options={group.options} selected={selections.members} counts={counts.members} onToggle={handleToggle('members')} />
-                </div>
-              ))}
-            </div>
-          </FilterGroup>
-
-          <FilterGroup legend="Venues">
-            <CheckboxList options={visibleVenues} selected={selections.venues} counts={counts.venues} onToggle={handleToggle('venues')} />
-            {venueOptions.length > VISIBLE_VENUES ? (
-              <button
-                type="button"
-                onClick={handleVenueToggle}
-                aria-expanded={showAllVenues}
-                className="mt-2 inline-flex min-h-11 items-center px-1 text-sm font-medium text-accent transition-colors hover:text-accent-hover lg:min-h-9"
-              >
-                {showAllVenues ? 'Show fewer venues' : 'Show all venues'}
-              </button>
-            ) : null}
-          </FilterGroup>
-        </div>
-      </aside>
-
-      <div className="min-w-0">
-        <div role="search" className="relative">
+    <>
+      <div role="search" aria-label="Search and filter publications">
+        <div className="relative">
           <label htmlFor="publication-search" className="sr-only">
             Search publications
           </label>
-          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" aria-hidden="true" />
+          <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted" aria-hidden="true" />
           <input
             id="publication-search"
             type="search"
             value={query}
             onChange={handleQueryChange}
             placeholder="Search titles, authors, venues…"
-            className="h-11 w-full rounded-md border border-border-strong bg-surface-raised pl-9 pr-3 text-sm text-foreground transition-colors duration-150 hover:border-foreground"
+            className="h-12 w-full rounded-full border border-border-strong bg-surface-raised pl-12 pr-5 text-base text-foreground shadow-[0_1px_2px_var(--card-shadow)] transition-colors duration-150 placeholder:text-muted hover:border-foreground"
           />
         </div>
 
-        {/* The status stays in the page (empty without filters) so screen readers announce result counts. */}
-        <div className={`flex flex-wrap items-center gap-2 ${isFiltered ? 'mt-4' : ''}`}>
-          <p aria-live="polite" className="mr-2 font-mono text-sm text-muted">
-            {isFiltered ? `Showing ${filteredRecords.length} of ${records.length} publications` : ''}
-          </p>
-          {activeFilters.map(({ key, value }) => (
-            <button
-              key={`${key}-${value}`}
-              type="button"
-              onClick={() => handleToggle(key)(value)}
-              className="inline-flex min-h-9 items-center gap-1.5 rounded-full border border-border-strong px-3 text-sm transition-colors hover:border-foreground"
-              aria-label={`Remove filter ${value}`}
-            >
-              {value}
-              <X className="h-3.5 w-3.5" aria-hidden="true" />
-            </button>
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          {menus.map((menu) => (
+            <FilterDropdown
+              key={menu.key}
+              label={menu.label}
+              groups={menu.groups}
+              selected={selections[menu.key]}
+              counts={counts[menu.key]}
+              isOpen={openMenu === menu.key}
+              onOpenChange={handleOpenChange(menu.key)}
+              onToggle={handleToggle(menu.key)}
+              onClear={handleClearGroup(menu.key)}
+              searchPlaceholder={menu.searchPlaceholder}
+            />
           ))}
           {isFiltered ? (
             <button
               type="button"
-              onClick={handleClear}
-              className="inline-flex min-h-9 items-center px-1 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+              onClick={handleClearAll}
+              className="inline-flex min-h-11 items-center px-2 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
             >
               Clear all
             </button>
           ) : null}
         </div>
+      </div>
 
-        {groups.length > 0 ? (
-          <>
-            <nav aria-label="Jump to year" className="mb-8 mt-6 flex flex-wrap gap-x-1 gap-y-1">
-              {groups.map((group) => (
-                <a
-                  key={group.year}
-                  href={`#year-${group.year}`}
-                  className="inline-flex min-h-11 items-center px-2 font-mono text-sm text-muted transition-colors hover:text-accent"
+      {/* The status stays in the page (empty without filters) so screen readers announce result counts. */}
+      <p aria-live="polite" className={`font-mono text-sm text-muted ${isFiltered ? 'mt-4' : ''}`}>
+        {isFiltered ? `Showing ${filteredRecords.length} of ${records.length} publications` : ''}
+      </p>
+
+      {groups.length > 0 ? (
+        <>
+          <nav aria-label="Jump to year" className="mb-10 mt-6 flex flex-wrap gap-x-1 gap-y-1">
+            {groups.map((group) => (
+              <a
+                key={group.year}
+                href={`#year-${group.year}`}
+                className="inline-flex min-h-11 items-center px-2 font-mono text-sm text-muted transition-colors hover:text-accent"
+              >
+                {group.year}
+              </a>
+            ))}
+          </nav>
+
+          <div className="space-y-16">
+            {groups.map((group) => (
+              <section
+                key={group.year}
+                id={`year-${group.year}`}
+                aria-labelledby={`year-${group.year}-heading`}
+                className="grid scroll-mt-20 gap-6 lg:grid-cols-[9rem_minmax(0,46rem)] lg:gap-10"
+              >
+                <h2
+                  id={`year-${group.year}-heading`}
+                  className="font-mono text-xl font-medium tabular-nums text-muted lg:sticky lg:top-20 lg:self-start"
                 >
                   {group.year}
-                </a>
-              ))}
-            </nav>
-
-            <div className="space-y-14">
-              {groups.map((group) => (
-                <section key={group.year} id={`year-${group.year}`} aria-labelledby={`year-${group.year}-heading`} className="scroll-mt-20">
-                  <h2
-                    id={`year-${group.year}-heading`}
-                    className="mb-6 border-b border-border pb-3 font-mono text-xl font-medium tabular-nums text-muted"
-                  >
-                    {group.year}
-                  </h2>
-                  <ul className="max-w-[46rem] space-y-7">
-                    {group.publications.map((publication) => (
-                      <li key={publication.id}>
-                        <PublicationEntry publication={publication} />
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              ))}
-            </div>
-          </>
-        ) : (
-          <div className="mt-10 max-w-reading">
-            <p className="text-lg font-semibold tracking-tight">No publications match these filters.</p>
-            <p className="mt-2 leading-7 text-muted">
-              Try a shorter search, untick some filters, or{' '}
-              <button type="button" onClick={handleClear} className="text-link">
-                clear all filters
-              </button>
-              .
-            </p>
+                </h2>
+                <ul className="space-y-7">
+                  {group.publications.map((publication) => (
+                    <li key={publication.id}>
+                      <PublicationEntry publication={publication} />
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
           </div>
-        )}
-      </div>
-    </div>
+        </>
+      ) : (
+        <div className="mt-10 max-w-reading">
+          <p className="text-lg font-semibold tracking-tight">No publications match these filters.</p>
+          <p className="mt-2 leading-7 text-muted">
+            Try a shorter search, fewer filters, or{' '}
+            <button type="button" onClick={handleClearAll} className="text-link">
+              clear all filters
+            </button>
+            .
+          </p>
+        </div>
+      )}
+    </>
   );
 }
