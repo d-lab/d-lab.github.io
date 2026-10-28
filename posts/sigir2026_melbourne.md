@@ -1,9 +1,8 @@
 ---
 title: "SIGIR 2026 in Melbourne: Posters, Connections, and New Directions for Search"
 date: "21 Sep 2026"
+author: "Pietro Bernardelle"
 ---
-
-**By Pietro Bernardelle**
 
 In July, I travelled from Brisbane to Melbourne for [SIGIR 2026](https://sigir2026.org/), one of the main conferences in Information Retrieval. Beyond being an opportunity to follow the latest work in the field, the conference also pushed me a little outside my usual comfort zone and gave me a chance to grow beyond the research itself. I attended without the usual group of colleagues around me, presented our work at the [Second Workshop on Explainability in Information Retrieval (WExIR)](https://xirworkshop.github.io/), and ended up leaving with both new research ideas and a much wider network than I had arrived with.
 

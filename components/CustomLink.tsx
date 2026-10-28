@@ -8,7 +8,7 @@ type CustomLinkProps = {
 };
 
 const CustomLink: React.FC<CustomLinkProps> = ({ href, children, className = '', isExternal = false }) => {
-  const baseClasses = 'text-blue-600 hover:underline';
+  const baseClasses = 'text-link';
   const fullClassName = `${baseClasses} ${className}`.trim();
 
   const externalProps = isExternal ? {

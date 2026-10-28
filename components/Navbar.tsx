@@ -1,134 +1,128 @@
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import ThemeSwitcher from './ThemeSwitcher';
+import { isActivePath, navigationItems } from '@/lib/navigation';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
-  const toggleMenu = () => {
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen]);
+
+  const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const closeMenu = () => {
+  const handleMenuClose = () => {
     setIsMenuOpen(false);
   };
 
   return (
     <>
-      <nav className="bg-[#231e52] dark:bg-[#231e52] text-white dark:text-gray-100 h-12 fixed top-0 left-0 right-0 z-50 shadow-md">
-        <div className="container mx-auto px-4 max-w-4xl flex justify-between items-center h-full">
-          {/* Logo/Name - Responsive sizing */}
+      <nav
+        aria-label="Primary navigation"
+        className="fixed left-0 right-0 top-0 z-50 h-14 bg-brand text-brand-foreground"
+      >
+        <div className="mx-auto flex h-full w-full max-w-frame items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
-            className="text-base sm:text-lg md:text-xl font-bold truncate max-w-[150px] sm:max-w-none hover:text-yellow-300 transition-colors"
-            onClick={closeMenu}
+            className="inline-flex min-h-11 items-center text-base font-semibold tracking-tight text-brand-foreground"
+            onClick={handleMenuClose}
+            aria-current={pathname === '/' ? 'page' : undefined}
           >
             DLab
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden sm:flex items-center space-x-4">
-            <Link href="/about" className="hover:text-yellow-300">
-              About Us
-            </Link>
-            <Link href="/people" className="hover:text-yellow-300">
-              People
-            </Link>
-            <Link href="/publications" className="hover:text-yellow-300">
-              Publications
-            </Link>
-            <Link href="/gallery" className="hover:text-yellow-300">
-              Gallery
-            </Link>
-            <Link href="/sponsors" className="hover:text-yellow-300">
-              Sponsors
-            </Link>
-		<Link href="/visiting" className="hover:text-yellow-300">
-              Visiting Us
-            </Link>            
-		<Link href="/blog" className="hover:text-yellow-300">
-              Blog
-            </Link>
+          <div className="hidden items-center gap-1 lg:flex">
+            {navigationItems.map((item) => {
+              const isActive = isActivePath(pathname, item.href);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={isActive ? 'page' : undefined}
+                  className={`relative inline-flex min-h-11 items-center px-3 text-sm font-medium transition-colors duration-150 ease-[var(--ease-out-quart)] after:absolute after:bottom-1.5 after:left-3 after:right-3 after:h-px after:origin-left after:bg-gold after:transition-transform after:duration-150 ${
+                    isActive
+                      ? 'text-brand-foreground after:scale-x-100'
+                      : 'text-brand-muted after:scale-x-0 hover:text-brand-foreground'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+            <span aria-hidden="true" className="ml-2 mr-1 h-4 w-px bg-brand-border" />
             <ThemeSwitcher />
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            onClick={toggleMenu}
-            className="sm:hidden p-2 hover:bg-[#312a73] dark:hover:bg-[#312a73] rounded-md transition-colors"
-            aria-label="Toggle menu"
+            ref={menuButtonRef}
+            type="button"
+            onClick={handleMenuToggle}
+            className="flex h-11 w-11 items-center justify-center rounded-md text-brand-muted transition-colors duration-150 hover:text-brand-foreground lg:hidden"
+            aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
-            {isMenuOpen ? (
-              <X className="w-5 h-5" />
-            ) : (
-              <Menu className="w-5 h-5" />
-            )}
+            {isMenuOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
         <div
-          className={`sm:hidden absolute top-12 left-0 right-0 bg-[#231e52] dark:bg-[#231e52] text-white shadow-lg transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-            }`}
+          id="mobile-navigation"
+          hidden={!isMenuOpen}
+          className="absolute left-0 right-0 top-14 border-t border-brand-border bg-brand shadow-[0_18px_40px_-28px_var(--navigation-shadow)] lg:hidden"
         >
-          <div className="container mx-auto px-4 py-4 space-y-3">
-            <Link
-              href="/about"
-              className="block py-2 hover:text-yellow-300"
-              onClick={closeMenu}
-            >
-              About Us
-            </Link>
-            <Link
-              href="/people"
-              className="block py-2 hover:text-yellow-300"
-              onClick={closeMenu}
-            >
-              People
-            </Link>
-            <Link
-              href="/gallery"
-              className="block py-2 hover:text-yellow-300"
-              onClick={closeMenu}
-            >
-              Gallery
-            </Link>
-            <Link
-              href="/publications"
-              className="block py-2 hover:text-yellow-300"
-              onClick={closeMenu}
-            >
-              Publications
-            </Link>
-            <Link
-              href="/sponsors"
-              className="block py-2 hover:text-yellow-300"
-              onClick={closeMenu}
-            >
-              Sponsors
-            </Link>
-            <Link
-              href="/blog"
-              className="block py-2 hover:text-yellow-300"
-              onClick={closeMenu}
-            >
-              Blog
-            </Link>
-            <div className="pt-2 border-t border-white/20">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-white/80">Theme</span>
-                <ThemeSwitcher />
-              </div>
+          <div className="mx-auto max-w-frame space-y-1 px-4 py-4 sm:px-6">
+            {navigationItems.map((item) => {
+              const isActive = isActivePath(pathname, item.href);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={handleMenuClose}
+                  aria-current={isActive ? 'page' : undefined}
+                  className={`flex min-h-11 items-center border-l-2 px-3 font-medium transition-colors duration-150 ${
+                    isActive
+                      ? 'border-gold text-brand-foreground'
+                      : 'border-transparent text-brand-muted hover:text-brand-foreground'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+            <div className="mt-2 flex items-center justify-between border-t border-brand-border pt-2">
+              <span className="px-3 text-sm text-brand-muted">Theme</span>
+              <ThemeSwitcher />
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Spacer to prevent content from hiding under fixed navbar */}
-      <div className="h-12 w-full"></div>
+      <div className="h-14 w-full" aria-hidden="true" />
     </>
   );
 }

@@ -1,189 +1,307 @@
-'use client';
-import { useEffect, useRef, useState } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import HeroSection from '@/components/SimpleHeroSection';
-import publicationsData from '@/data/publications.json';
+import { ArrowRight, Database, Scale, ShieldCheck, type LucideIcon } from 'lucide-react';
+import PostCard from '@/components/PostCard';
+import SponsorLogo from '@/components/SponsorLogo';
+import { featuredGroupPictures, heroGroupPicture } from '@/data/groupPictures';
+import { sponsors } from '@/data/sponsors';
+import { getAllPosts } from '@/lib/posts';
+import { getLatestPublications, getVenueLabel } from '@/lib/publications';
+import { contactEmail } from '@/lib/site';
+import { withBasePath } from '@/lib/withBasePath';
 
-type Publication = {
-  citation: string;
-  pdfLabel?: string;
-  pdfUrl?: string;
+type ResearchArea = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
 };
 
-type PublicationGroup = {
-  year: number;
-  publications: Publication[];
+const researchAreas: ResearchArea[] = [
+  {
+    icon: Scale,
+    title: 'Perspective-aware LLM evaluation',
+    description:
+      'We analyse how large language models encode political and demographic perspectives, with a focus on bias, relevance judgments, and summarisation effects.',
+  },
+  {
+    icon: Database,
+    title: 'Human-centred data quality',
+    description:
+      'We combine metadata, crowdsourcing, and information retrieval methods to improve quality assessment and trust in unstructured data workflows.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Social media integrity and safety',
+    description:
+      'We study misinformation, harmful content, and online persuasion, developing methods and tools for fairer and more transparent sociotechnical systems.',
+  },
+];
+
+const engagementRoutes = [
+  {
+    title: 'Study with us',
+    description: 'Prospective PhD students curious about sociotechnical research on AI.',
+    action: { label: 'Get in touch', href: `mailto:${contactEmail}?subject=${encodeURIComponent('PhD enquiry')}` },
+  },
+  {
+    title: 'Visit the lab',
+    description: 'Funded 8 to 12 week research visits in Brisbane for PhD students from other universities.',
+    action: { label: 'Visiting Students Scheme', href: '/visiting/' },
+  },
+  {
+    title: 'Collaborate',
+    description: 'Government agencies, communities, and organisations seeking research-backed work on safe and responsible AI.',
+    action: { label: 'Start a conversation', href: `mailto:${contactEmail}?subject=${encodeURIComponent('Collaboration enquiry')}` },
+  },
+];
+
+type SectionHeaderProps = {
+  eyebrow: string;
+  title: string;
+  id: string;
+  description?: string;
+  link?: { href: string; label: string };
 };
 
-const latestPublications = [...(publicationsData as PublicationGroup[])]
-  .sort((a, b) => b.year - a.year)
-  .flatMap((group) =>
-    group.publications.map((publication) => ({
-      ...publication,
-      year: group.year,
-    }))
-  )
-  .slice(0, 5);
+const SectionHeader = ({ eyebrow, title, id, description, link }: SectionHeaderProps) => (
+  <div className="mb-10 flex flex-col gap-4 sm:mb-12 md:flex-row md:items-end md:justify-between">
+    <div className="max-w-2xl">
+      <p className="font-mono text-sm uppercase tracking-[0.12em] text-accent">{eyebrow}</p>
+      <h2 id={id} className="mt-3 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
+        {title}
+      </h2>
+      {description ? <p className="mt-4 text-lg leading-8 text-muted">{description}</p> : null}
+    </div>
+    {link ? (
+      <Link
+        href={link.href}
+        className="inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-md border border-border-strong px-4 text-sm font-semibold text-foreground transition-colors duration-150 hover:border-foreground"
+      >
+        {link.label}
+        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      </Link>
+    ) : null}
+  </div>
+);
+
+const Section = ({ id, tinted = false, children }: { id: string; tinted?: boolean; children: ReactNode }) => (
+  <section aria-labelledby={id} className={`py-20 sm:py-24 lg:py-28 ${tinted ? 'bg-surface-tint' : ''}`}>
+    <div className="mx-auto w-full max-w-frame px-4 sm:px-6 lg:px-8">{children}</div>
+  </section>
+);
+
+const enterDelay = (milliseconds: number) => ({ '--home-enter-delay': `${milliseconds}ms` }) as CSSProperties;
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false);
-  const researchRef = useRef<HTMLDivElement | null>(null);
-
-  const focusAreas = [
-    {
-      title: 'Perspective-Aware LLM Evaluation',
-      description:
-        'We analyze how large language models encode political and demographic perspectives, with a focus on bias, relevance judgments, and summarization effects.',
-    },
-    {
-      title: 'Human-Centered Data Quality',
-      description:
-        'Our research combines metadata, crowdsourcing, and information retrieval methods to improve quality assessment and trust in unstructured data workflows.',
-    },
-    {
-      title: 'Social Media Integrity and Safety',
-      description:
-        'We study misinformation, harmful content, and online persuasion, developing methods and tools for fairer and more transparent sociotechnical systems.',
-    },
-  ];
-
-  useEffect(() => {
-    const currentRef = researchRef.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      {
-        root: null,
-        rootMargin: '-50px',
-        threshold: 0.1
-      }
-    );
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
+  const latestPublications = getLatestPublications(5);
+  const latestPosts = getAllPosts().slice(0, 3);
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <HeroSection />
+    <>
+      {/* On wide screens the text sits over the lower part of the photo, below everyone's faces.
+          On narrow screens the photo is too short for that, so the text follows it on indigo. */}
+      <section
+        aria-labelledby="home-title"
+        className="relative overflow-hidden bg-brand lg:h-[clamp(600px,50vw,min(calc(100svh-3.5rem),880px))]"
+      >
+        <div className="relative aspect-[2/1] lg:absolute lg:inset-0 lg:aspect-auto">
+          <Image
+            src={withBasePath(heroGroupPicture.src)}
+            alt={heroGroupPicture.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[center_30%]"
+          />
+          <div className="hero-overlay absolute inset-0" aria-hidden="true" />
+        </div>
 
-      <div className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 mt-10 sm:mt-14">
-        <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-16">
-          {focusAreas.map((area) => (
-            <div
-              key={area.title}
-              className="rounded-3xl p-6 border border-blue-100 dark:border-blue-800 bg-white/90 dark:bg-blue-950/30 shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20 transition-shadow"
-            >
-              <h3 className="text-lg font-semibold text-blue-700 dark:text-yellow-300 mb-3">
-                {area.title}
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-200 leading-relaxed">{area.description}</p>
-            </div>
-          ))}
-        </section>
-
-        <div
-          ref={researchRef}
-          className={`transform transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-        >
-          <section className="w-full mb-16">
-            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
-              <div>
-                <h2 className="text-3xl font-bold text-blue-700 dark:text-yellow-300 mb-2">Latest Publications</h2>
-                <p className="text-gray-600 dark:text-gray-200 max-w-xl">
-                  The 5 most recent entries from our publications page, highlighting current work across LLMs, fairness, relevance, and social media analysis.
-                </p>
-              </div>
-              <Link
-                href="/publications"
-                className="inline-flex items-center justify-center rounded-full border border-blue-600 text-blue-700 px-5 py-2 text-sm font-semibold hover:bg-blue-50 transition-colors dark:border-yellow-300 dark:text-yellow-200 dark:hover:bg-blue-950"
+        <div className="relative lg:absolute lg:inset-x-0 lg:bottom-0">
+          <div className="mx-auto flex w-full max-w-frame flex-col gap-8 px-4 py-10 text-brand-foreground sm:px-6 sm:py-12 lg:gap-6 lg:px-8 lg:pb-14 lg:pt-0 xl:flex-row xl:items-end xl:justify-between">
+            <div className="max-w-2xl lg:[text-shadow:0_1px_16px_rgb(20_16_50/0.55)]">
+              <p className="home-enter font-mono text-sm uppercase tracking-[0.14em] text-gold" style={enterDelay(0)}>
+                Responsible AI research lab · The University of Queensland
+              </p>
+              <h1
+                id="home-title"
+                className="home-enter mt-4 text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.045em] sm:text-5xl lg:text-[3.5rem]"
+                style={enterDelay(80)}
               >
-                View all publications
+                Building AI for public good.
+              </h1>
+              <p className="home-enter mt-4 max-w-xl text-lg leading-8 text-brand-muted lg:text-white/85" style={enterDelay(160)}>
+                DLab is an interdisciplinary research group exploring how data, people, and AI affect each other.
+              </p>
+            </div>
+            <div className="home-enter flex shrink-0 flex-wrap gap-3" style={enterDelay(240)}>
+              <a
+                href="#work-with-us-title"
+                className="inline-flex min-h-12 items-center rounded-md bg-white px-6 text-sm font-semibold text-brand transition-colors duration-150 hover:bg-white/90"
+              >
+                Work with us
+              </a>
+              <Link
+                href="/people/"
+                className="inline-flex min-h-12 items-center gap-2 rounded-md border border-white/60 px-6 text-sm font-semibold text-white transition-colors duration-150 hover:border-white hover:bg-white/10"
+              >
+                Meet the team
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
-
-            <ul className="space-y-4">
-              {latestPublications.map((publication, index) => {
-                const pdfLabel = publication.pdfLabel ?? '[pdf]';
-
-                return (
-                  <li
-                    key={`${publication.year}-${index}`}
-                    className="rounded-2xl border border-blue-100 dark:border-blue-900 bg-white/90 dark:bg-blue-950/20 p-5 shadow-md shadow-blue-600/5"
-                  >
-                    <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">{publication.citation}</p>
-                    {(publication.pdfUrl || publication.pdfLabel) && (
-                      <div className="mt-2">
-                        {publication.pdfUrl ? (
-                          <a
-                            href={publication.pdfUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm font-semibold text-blue-700 hover:underline dark:text-yellow-200"
-                          >
-                            {pdfLabel}
-                          </a>
-                        ) : (
-                          <span className="text-sm text-gray-500 dark:text-gray-400">{pdfLabel}</span>
-                        )}
-                      </div>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
+          </div>
         </div>
+      </section>
 
-      </div>
+      <Section id="research-title">
+        <SectionHeader
+          id="research-title"
+          eyebrow="Our research"
+          title="Where data, people, and AI meet"
+          description="We contribute to computational social science, human-computer interaction, machine learning, and information retrieval, with a focus on the risks and harms of AI."
+          link={{ href: '/about/', label: 'About the lab' }}
+        />
+        <ul className="grid gap-6 md:grid-cols-3">
+          {researchAreas.map((area) => (
+            <li key={area.title} className="rounded-xl border border-border bg-surface-raised p-7">
+              <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand text-gold">
+                <area.icon className="h-5 w-5" aria-hidden="true" />
+              </span>
+              <h3 className="mt-6 text-lg font-semibold tracking-tight">{area.title}</h3>
+              <p className="mt-3 leading-7 text-muted">{area.description}</p>
+            </li>
+          ))}
+        </ul>
+      </Section>
 
-      <footer className="relative mt-12 w-full overflow-hidden border-t border-black/15">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#231e52] via-[#2f2a69] to-[#d8b84f]" />
-        <div className="absolute inset-0 bg-black/35" />
-        <div className="relative mx-auto grid max-w-5xl grid-cols-1 items-center gap-8 px-4 py-12 text-white sm:grid-cols-3 sm:px-6 sm:py-14 lg:px-8">
-          <div>
-            <h3 className="mb-2 text-2xl font-bold">Engage with DLab</h3>
-            <p className="text-sm text-white/85 sm:text-base">
-              We partner with government, communities, and organizations to build safe and responsible AI systems.
+      <Section id="publications-title" tinted>
+        <SectionHeader
+          id="publications-title"
+          eyebrow="Latest publications"
+          title="Recent work"
+          description="Our newest papers at venues across information retrieval, natural language processing, and human-AI interaction."
+          link={{ href: '/publications/', label: 'All publications' }}
+        />
+        <ul className="divide-y divide-border border-y border-border">
+          {latestPublications.map((publication, index) => {
+            const venue = getVenueLabel(publication.citation);
+
+            return (
+              <li key={`${publication.year}-${index}`} className="grid gap-3 py-7 md:grid-cols-[11rem_minmax(0,1fr)] md:gap-8">
+                <p className="font-mono text-sm text-accent">{venue ?? publication.year}</p>
+                <div className="max-w-[72ch]">
+                  <p className="leading-7">{publication.citation}</p>
+                  {publication.pdfUrl ? (
+                    <a
+                      href={publication.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-link mt-1 inline-flex min-h-11 items-center font-mono text-sm"
+                    >
+                      {publication.pdfLabel ?? '[pdf]'}
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  ) : null}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </Section>
+
+      <Section id="news-title">
+        <SectionHeader
+          id="news-title"
+          eyebrow="News and stories"
+          title="From the lab"
+          description="Conference reports and reflections written by DLab members."
+          link={{ href: '/blog/', label: 'All posts' }}
+        />
+        <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {latestPosts.map((post) => (
+            <li key={post.slug}>
+              <PostCard post={post} />
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section id="life-title" tinted>
+        <SectionHeader
+          id="life-title"
+          eyebrow="Life at DLab"
+          title="A lab that works together"
+          description="On campus at The University of Queensland, at conferences around the world, and around the lunch table."
+          link={{ href: '/gallery/', label: 'View the gallery' }}
+        />
+        <ul className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {featuredGroupPictures.map((picture) => (
+            <li key={picture.id} className="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-muted">
+              <Image
+                src={withBasePath(picture.src)}
+                alt={picture.alt}
+                fill
+                sizes="(max-width: 1024px) 50vw, 280px"
+                className="object-cover"
+              />
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <section aria-labelledby="work-with-us-title" className="scroll-mt-14 bg-brand text-brand-foreground">
+        <div className="mx-auto w-full max-w-frame px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+          <div className="max-w-2xl">
+            <p className="font-mono text-sm uppercase tracking-[0.12em] text-gold">Get involved</p>
+            <h2 id="work-with-us-title" className="mt-3 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
+              Work with us
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-brand-muted">
+              We partner with government, communities, and organisations to build safe and responsible AI systems.
             </p>
           </div>
-          <div className="space-y-2 text-sm sm:text-base">
-            <p className="font-semibold uppercase tracking-[0.2em] text-[#f1df97]"><a href="mailto:demartini@acm.org">Join</a></p>
-            <p className="text-white/90">Graduate students curious about sociotechnical research.</p>
-            <p className="mt-4 font-semibold uppercase tracking-[0.2em] text-[#f1df97]"><a href="mailto:demartini@acm.org">Collaborate</a></p>
-            <p className="text-white/90">Government agencies and organizations seeking research-backed experimentation.</p>
-          </div>
-          <div className="flex flex-col space-y-3">
-            <Link
-              href="/people"
-              className="inline-flex items-center justify-center rounded-full bg-white/90 px-5 py-3 font-semibold text-[#231e52] transition-colors hover:bg-[#f5e8bc]"
-            >
-              Meet our team
-            </Link>
-            <Link
-              href="/blog"
-              className="inline-flex items-center justify-center rounded-full border border-white/60 px-5 py-3 font-semibold text-white transition-colors hover:bg-white/10"
-            >
-              Read DLab stories
-            </Link>
-            <Link
-              href="/gallery"
-              className="inline-flex items-center justify-center rounded-full border border-white/60 px-5 py-3 font-semibold text-white transition-colors hover:bg-white/10"
-            >
-              Browse gallery
-            </Link>
-          </div>
+          <ul className="mt-12 grid gap-6 md:grid-cols-3">
+            {engagementRoutes.map((route) => (
+              <li key={route.title} className="flex flex-col rounded-xl border border-brand-border p-7">
+                <span className="block h-0.5 w-10 bg-gold" aria-hidden="true" />
+                <h3 className="mt-6 text-xl font-semibold tracking-tight">{route.title}</h3>
+                <p className="mt-3 flex-1 leading-7 text-brand-muted">{route.description}</p>
+                {route.action.href.startsWith('mailto:') ? (
+                  <a href={route.action.href} className="mt-6 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-gold hover:underline hover:underline-offset-4">
+                    {route.action.label}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                ) : (
+                  <Link href={route.action.href} className="mt-6 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-gold hover:underline hover:underline-offset-4">
+                    {route.action.label}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
-      </footer>
-    </div>
+      </section>
+
+      <section aria-labelledby="supporters-title" className="py-16 sm:py-20">
+        <div className="mx-auto w-full max-w-frame px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 flex flex-wrap items-baseline justify-between gap-4">
+            <h2 id="supporters-title" className="font-mono text-sm uppercase tracking-[0.12em] text-muted">
+              Supported by
+            </h2>
+            <Link href="/sponsors/" className="text-link text-sm font-medium">
+              About our sponsors
+            </Link>
+          </div>
+          <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
+            {sponsors.map((sponsor) => (
+              <li key={sponsor.name}>
+                <SponsorLogo sponsor={sponsor} size="small" showName={false} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </>
   );
 }

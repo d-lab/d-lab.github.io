@@ -1,70 +1,53 @@
-import type { Metadata } from 'next';
+import { CollectionPage } from '@/components/PageFrame';
+import PostCard from '@/components/PostCard';
 import StructuredData from '@/components/StructuredData';
 import { getAllPosts } from '@/lib/posts';
-import { absoluteUrl, siteName } from '@/lib/site';
-import Link from 'next/link';
+import { canonicalUrl, createPageMetadata, organizationId, siteName } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'Lab Notes',
-  description: 'News, essays, and research notes from DLab on AI, data, and sociotechnical systems.',
-  alternates: {
-    canonical: '/blog',
-  },
-};
+const description =
+  'Conference reports, research reflections, and stories from DLab members working on responsible AI, information retrieval, and computational social science.';
 
-const PostCard = ({ post }: { post: { slug: string; title: string; date: string } }) => {
-  return (
-    <div className="mb-8">
-      <div className="text-gray-500 text-sm mb-1">
-        {post.date}
-      </div>
-      <Link 
-        href={`/blog/${post.slug}`}
-        className="text-2xl text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 dark:text-yellow-200 dark:hover:text-yellow-100"
-      >
-        {post.title}
-      </Link>
-    </div>
-  );
-};
+export const metadata = createPageMetadata({
+  title: 'Blog',
+  description,
+  path: '/blog/',
+});
 
 export default function Blog() {
   const posts = getAllPosts();
-  
+
   return (
-    <div className="max-w-3xl mx-auto py-16 px-4">
+    <CollectionPage
+      eyebrow="News and stories"
+      title="Blog"
+      description="Conference reports, research reflections, and stories written by DLab members."
+    >
       <StructuredData
         data={{
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
-          name: `${siteName} Lab Notes`,
-          description: 'Blog index for DLab research notes, essays, and updates.',
-          url: absoluteUrl('/blog'),
+          name: `${siteName} Blog`,
+          description,
+          url: canonicalUrl('/blog/'),
+          about: { '@id': organizationId },
           mainEntity: {
             '@type': 'ItemList',
             itemListElement: posts.map((post, index) => ({
               '@type': 'ListItem',
               position: index + 1,
-              url: absoluteUrl(`/blog/${post.slug}`),
+              url: canonicalUrl(`/blog/${post.slug}/`),
               name: post.title,
             })),
           },
         }}
       />
-      <div className="mb-10">
-        <h1 className="text-4xl font-bold text-blue-700 dark:text-yellow-300 mb-4">Lab Notes</h1>
-        <p className="text-gray-600 dark:text-gray-200">
-          Dispatches from the field: prototypes, reflections, and community stories from across DLab.
-        </p>
-      </div>
-      <div className="space-y-6">
+      <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
-          <PostCard 
-            key={post.slug} 
-            post={post} 
-          />
+          <li key={post.slug}>
+            <PostCard post={post} headingLevel="h2" />
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </CollectionPage>
   );
 }

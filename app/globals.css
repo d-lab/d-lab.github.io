@@ -3,32 +3,139 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --flag_background: rgb(248,248,248);
-  overflow-y: scroll
-}
-
-
-.debug {
-  border: 1px solid red;
-}
-
-.katex {
-  color: #c14343;
+  color-scheme: light;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.23 0.035 285);
+  --muted-foreground: oklch(0.47 0.03 282);
+  --surface-muted: oklch(0.972 0.006 285);
+  --surface-raised: oklch(1 0 0);
+  --surface-tint: oklch(0.972 0.012 285);
+  --card-shadow: oklch(0.25 0.06 285 / 0.12);
+  --border-subtle: oklch(0.89 0.012 285);
+  --border-strong: oklch(0.72 0.025 285);
+  --accent: oklch(0.43 0.15 274);
+  --accent-hover: oklch(0.35 0.14 274);
+  --focus-ring: oklch(0.55 0.18 274);
+  --brand: #231e52;
+  --brand-foreground: oklch(0.98 0.004 285);
+  --brand-muted: oklch(0.82 0.035 285);
+  --brand-border: oklch(0.4 0.07 285);
+  --gold: #d8b84f;
+  --navigation-shadow: oklch(0.18 0.04 285 / 0.22);
+  --math-accent: oklch(0.5 0.17 28);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  overflow-y: scroll;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --flag_background: #1f2937;
+  color-scheme: dark;
+  --background: oklch(0.175 0.026 285);
+  --foreground: oklch(0.94 0.008 285);
+  --muted-foreground: oklch(0.75 0.025 285);
+  --surface-muted: oklch(0.215 0.03 285);
+  --surface-raised: oklch(0.235 0.032 285);
+  --surface-tint: oklch(0.205 0.03 285);
+  --card-shadow: oklch(0.05 0.02 285 / 0.5);
+  --border-subtle: oklch(0.34 0.035 285);
+  --border-strong: oklch(0.5 0.04 285);
+  --accent: oklch(0.83 0.12 88);
+  --accent-hover: oklch(0.9 0.09 88);
+  --focus-ring: oklch(0.83 0.12 88);
+  --brand-border: oklch(0.36 0.06 285);
+  --navigation-shadow: oklch(0.05 0.02 285 / 0.7);
+  --math-accent: oklch(0.76 0.12 28);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-kerning: normal;
 }
 
+.katex {
+  color: var(--math-accent);
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a,
+  button,
+  [tabindex]:not([tabindex='-1']) {
+    outline-color: transparent;
+    outline-offset: 3px;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:not([tabindex='-1']):focus-visible {
+    outline: 3px solid var(--focus-ring);
+  }
+}
+
+@layer components {
+  .section-heading {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.35rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+  }
+
+  .text-link {
+    color: var(--accent);
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in oklch, var(--accent) 35%, transparent);
+    text-underline-offset: 4px;
+    transition: color 150ms var(--ease-out-quart), text-decoration-color 150ms var(--ease-out-quart);
+  }
+
+  .text-link:hover {
+    color: var(--accent-hover);
+    text-decoration-color: currentColor;
+  }
+
+  .reading-copy > * + * {
+    margin-top: 1.25rem;
+  }
+
+  .reading-copy h2 {
+    margin-top: 3rem;
+    font-size: clamp(1.35rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+  }
+
+  .reading-copy ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+  }
+
+  .reading-copy li + li {
+    margin-top: 0.75rem;
+  }
+
+  .reading-copy li::marker {
+    color: var(--muted-foreground);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Blog post images: two or more images on one Markdown line form a grid. */
 .prose p:has(> img + img) {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -69,18 +176,82 @@ body {
   }
 }
 
-@layer base {
-  body, p, span, div, li {
-    font-family: var(--font-inconsolata), monospace;
-  }
+/* Hero photograph overlay. On wide screens a stronger gradient rises from the
+   bottom edge behind the text and fades out below people's faces. */
+.hero-overlay {
+  /* A light, even indigo tint over the whole photo to soften it. */
+  background: rgb(35 30 82 / var(--hero-tint, 0.22));
+}
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-quicksand), sans-serif;
+@media (min-width: 1024px) {
+  .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgb(35 30 82 / 0) 0%,
+        rgb(35 30 82 / 0) 38%,
+        rgb(35 30 82 / 0.6) 56%,
+        rgb(35 30 82 / 0.88) 74%,
+        rgb(35 30 82 / 0.95) 100%
+      ),
+      rgb(35 30 82 / var(--hero-tint, 0.22));
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Images that open in the full-screen viewer (large screens only, see ImageLightbox). */
+.lightbox-trigger {
+  cursor: zoom-in;
+  transition: opacity 150ms var(--ease-out-quart);
+}
+
+.lightbox-trigger:hover {
+  opacity: 0.9;
+}
+
+@keyframes lightbox-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox[open],
+.lightbox[open]::backdrop {
+  animation: lightbox-enter 180ms var(--ease-out-quart);
+}
+
+/* Homepage entrance. Content starts visible if animations are unsupported. */
+@keyframes home-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.home-enter {
+  animation: home-enter 480ms var(--ease-out-quint) both;
+  animation-delay: var(--home-enter-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .home-enter {
+    animation: none;
   }
 }

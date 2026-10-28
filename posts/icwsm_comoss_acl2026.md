@@ -1,10 +1,8 @@
 ---
 title: "ICWSM, CSS Summer School, and ACL 2026"
 date: "13 Aug 2026"
+author: "Stefano Civelli"
 ---
-
-**By Stefano Civelli**
-
 
 I spent the last few months travelling through three very different research events: [ICWSM 2026](https://www.icwsm.org/2026/) in Los Angeles, the Summer School in Computational Social Science in Como, and [ACL 2026](https://2026.aclweb.org/) in San Diego. They had different audiences, different methods, and in one case a conference dinner on an aircraft carrier. Yet, the same idea kept coming back to my mind.
 

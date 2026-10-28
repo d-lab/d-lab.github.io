@@ -42,3 +42,6 @@ Thumbs.db
 *.swo
 
 .codex
+# Generated web images (scripts/optimize-images.js)
+public/images/web/
+data/generated/

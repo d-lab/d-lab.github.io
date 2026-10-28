@@ -6,23 +6,32 @@ import { useEffect, useState } from 'react'
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
   if (!mounted) {
-    return null
+    return <span className="block h-11 w-11" aria-hidden="true" />
+  }
+
+  const isDark = resolvedTheme === 'dark'
+  const label = isDark ? 'Switch to light theme' : 'Switch to dark theme'
+
+  const handleClick = () => {
+    setTheme(isDark ? 'light' : 'dark')
   }
 
   return (
     <button
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded-full bg-white/80 text-blue-700 hover:bg-white shadow-sm dark:bg-blue-800 dark:text-yellow-200 dark:hover:bg-blue-700 transition-colors"
-      aria-label="Toggle color theme"
+      type="button"
+      onClick={handleClick}
+      className="flex h-11 w-11 items-center justify-center rounded-md text-brand-muted transition-colors duration-150 ease-[var(--ease-out-quart)] hover:text-brand-foreground"
+      aria-label={label}
+      title={label}
     >
-      {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+      {isDark ? <Sun size={16} strokeWidth={1.8} aria-hidden="true" /> : <Moon size={16} strokeWidth={1.8} aria-hidden="true" />}
     </button>
   )
 }

@@ -7,7 +7,7 @@ export default function StructuredData({ data }: StructuredDataProps) {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(data),
+        __html: JSON.stringify(data).replace(/</g, '\\u003c'),
       }}
     />
   );

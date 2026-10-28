@@ -1,9 +1,8 @@
 ---
 title: "ECIR 2026 in Delft: research, reflection, and a memorable week in the Netherlands"
 date: "11 May 2026"
+author: "Samaneh Mohtadi"
 ---
-
-**By Samaneh Mohtadi**
 
 ## **Arriving in Delft**
 

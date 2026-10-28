@@ -1,9 +1,8 @@
 ---
 title: "Web Science 2026 in Braunschweig: new ideas and old friends from the first week in Germany"
 date: "29 May 2026"
+author: "Gianluca Demartini"
 ---
-
-**By Gianluca Demartini**
 
 ## **Arriving in Braunschweig**
 

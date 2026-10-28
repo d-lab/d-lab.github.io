@@ -1,6 +1,8 @@
 import 'server-only';
 import fs from 'node:fs';
 import path from 'node:path';
+import gallery from './gallery.json';
+import { getWebImage } from '@/lib/images';
 
 export type GroupPicture = {
   id: string;
@@ -10,141 +12,49 @@ export type GroupPicture = {
   height: number;
 };
 
+type GalleryEntry = {
+  file: string;
+  alt: string;
+};
+
 const GROUP_PICS_DIR = path.join(process.cwd(), 'public', 'images', 'group_pics');
-const SUPPORTED_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif', '.gif']);
+const SUPPORTED_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif']);
+const FALLBACK_ALT = 'DLab group photograph';
 
-function readPngSize(buffer: Buffer): { width: number; height: number } | null {
-  const pngSignature = [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a];
-  const isPng = pngSignature.every((byte, index) => buffer[index] === byte);
+const toGroupPicture = ({ file, alt }: GalleryEntry, variant = ''): GroupPicture => {
+  const image = getWebImage(`/images/group_pics/${file}${variant}`);
 
-  if (!isPng || buffer.length < 24) {
-    return null;
+  if (!image) {
+    throw new Error(`No web image for group_pics/${file}. Run \`npm run optimize:images\`.`);
   }
 
-  const width = buffer.readUInt32BE(16);
-  const height = buffer.readUInt32BE(20);
+  return { id: file, alt, ...image };
+};
 
-  if (width > 0 && height > 0) {
-    return { width, height };
-  }
-
-  return null;
-}
-
-function readJpegSize(buffer: Buffer): { width: number; height: number } | null {
-  if (buffer.length < 4 || buffer[0] !== 0xff || buffer[1] !== 0xd8) {
-    return null;
-  }
-
-  let offset = 2;
-
-  while (offset + 9 < buffer.length) {
-    if (buffer[offset] !== 0xff) {
-      offset += 1;
-      continue;
-    }
-
-    while (offset < buffer.length && buffer[offset] === 0xff) {
-      offset += 1;
-    }
-
-    if (offset >= buffer.length) {
-      break;
-    }
-
-    const marker = buffer[offset];
-    offset += 1;
-
-    if (marker === 0xd9 || marker === 0xda) {
-      break;
-    }
-
-    if (offset + 1 >= buffer.length) {
-      break;
-    }
-
-    const segmentLength = buffer.readUInt16BE(offset);
-
-    if (segmentLength < 2 || offset + segmentLength > buffer.length) {
-      break;
-    }
-
-    const isSofMarker =
-      (marker >= 0xc0 && marker <= 0xc3) ||
-      (marker >= 0xc5 && marker <= 0xc7) ||
-      (marker >= 0xc9 && marker <= 0xcb) ||
-      (marker >= 0xcd && marker <= 0xcf);
-
-    if (isSofMarker && segmentLength >= 7) {
-      const height = buffer.readUInt16BE(offset + 3);
-      const width = buffer.readUInt16BE(offset + 5);
-
-      if (width > 0 && height > 0) {
-        return { width, height };
-      }
-    }
-
-    offset += segmentLength;
-  }
-
-  return null;
-}
-
-function getImageDimensions(filePath: string): { width: number; height: number } {
-  const buffer = fs.readFileSync(filePath);
-
-  return readPngSize(buffer) ?? readJpegSize(buffer) ?? { width: 1600, height: 1200 };
-}
-
-function loadGroupPictures(): GroupPicture[] {
-  if (!fs.existsSync(GROUP_PICS_DIR)) {
-    return [];
-  }
-
-  const pictures = fs
+// Photos listed in gallery.json keep their order. Photos added to the folder but
+// not yet listed appear first, newest file name first, so new uploads are visible.
+const loadGroupPictures = (): GroupPicture[] => {
+  const listedFiles = new Set(gallery.photos.map((photo) => photo.file));
+  const filesOnDisk = fs
     .readdirSync(GROUP_PICS_DIR)
-    .filter((filename) => SUPPORTED_EXTENSIONS.has(path.extname(filename).toLowerCase()))
-    .map((filename) => {
-      const filePath = path.join(GROUP_PICS_DIR, filename);
-      const stats = fs.statSync(filePath);
+    .filter((filename) => SUPPORTED_EXTENSIONS.has(path.extname(filename).toLowerCase()));
+  const existingFiles = new Set(filesOnDisk);
 
-      return {
-        filename,
-        filePath,
-        // birthtime is the closest filesystem equivalent to when the image was
-        // added. Some filesystems do not expose it, so fall back to mtime.
-        timestamp: stats.birthtimeMs > 0 ? stats.birthtimeMs : stats.mtimeMs,
-      };
-    })
-    .sort((a, b) => {
-      if (a.timestamp !== b.timestamp) {
-        return b.timestamp - a.timestamp;
-      }
+  const unlistedPhotos = filesOnDisk
+    .filter((filename) => !listedFiles.has(filename) && filename !== gallery.hero.file)
+    .sort((a, b) => b.localeCompare(a, undefined, { numeric: true }))
+    .map((file) => ({ file, alt: FALLBACK_ALT }));
+  const listedPhotos = gallery.photos.filter((photo) => existingFiles.has(photo.file));
 
-      return b.filename.localeCompare(a.filename, undefined, { numeric: true });
-    });
-
-  return pictures.map(({ filename, filePath }) => {
-    const src = `/images/group_pics/${filename}`;
-    const { width, height } = getImageDimensions(filePath);
-
-    return {
-      id: filename,
-      src,
-      alt: 'DLab group picture',
-      width,
-      height,
-    };
-  });
-}
+  return [...unlistedPhotos, ...listedPhotos].map((entry) => toGroupPicture(entry));
+};
 
 export const groupPictures: GroupPicture[] = loadGroupPictures();
 
-export const heroGroupPicture =
-  groupPictures.find((picture) => picture.src.endsWith('/16.jpg')) ?? groupPictures[0] ?? {
-    id: 'fallback',
-    src: '/images/group_pics/1.jpg',
-    alt: 'DLab group picture',
-    width: 1600,
-    height: 1200,
-  };
+// A larger copy made by scripts/optimize-images.js for the full-width homepage hero.
+export const heroGroupPicture: GroupPicture = toGroupPicture(gallery.hero, '#hero');
+
+// Photos shown in the homepage "Life at DLab" row, in gallery.json order.
+export const featuredGroupPictures: GroupPicture[] = gallery.featured
+  .map((file) => groupPictures.find((picture) => picture.id === file))
+  .filter((picture): picture is GroupPicture => Boolean(picture));
