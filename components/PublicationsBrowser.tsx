@@ -168,7 +168,7 @@ export default function PublicationsBrowser({ records, topicOptions, memberOptio
             <button
               type="button"
               onClick={handleClearAll}
-              className="inline-flex min-h-11 items-center px-2 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+              className="inline-flex min-h-9 items-center px-2 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
             >
               Clear all
             </button>

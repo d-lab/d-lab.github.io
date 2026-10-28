@@ -116,7 +116,7 @@ export default function FilterDropdown({
         aria-expanded={isOpen}
         aria-controls={panelId}
         aria-label={isActive ? `${label}: ${selected.join(', ')}` : label}
-        className={`inline-flex h-11 max-w-[16rem] items-center gap-2 rounded-full border px-4 text-sm font-medium transition-colors duration-150 ease-[var(--ease-out-quart)] ${
+        className={`inline-flex h-9 max-w-[16rem] items-center gap-1.5 rounded-full border px-3.5 text-sm font-medium transition-colors duration-150 ease-[var(--ease-out-quart)] ${
           isActive
             ? 'border-brand bg-brand text-brand-foreground hover:opacity-90'
             : 'border-border-strong bg-surface-raised text-foreground hover:border-foreground'
