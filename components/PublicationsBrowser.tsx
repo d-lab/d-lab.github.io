@@ -132,11 +132,10 @@ export default function PublicationsBrowser({ records, topicOptions, memberOptio
           </div>
         </div>
 
-        <div className="mt-3 flex min-h-11 flex-wrap items-center justify-between gap-x-4">
+        {/* The row stays in the page (empty without filters) so screen readers announce result counts. */}
+        <div className={`flex flex-wrap items-center justify-between gap-x-4 ${isFiltered ? 'mt-3 min-h-11' : ''}`}>
           <p aria-live="polite" className="font-mono text-sm text-muted">
-            {isFiltered
-              ? `Showing ${filteredRecords.length} of ${records.length} publications`
-              : `${records.length} publications`}
+            {isFiltered ? `Showing ${filteredRecords.length} of ${records.length} publications` : ''}
           </p>
           {isFiltered ? (
             <button
