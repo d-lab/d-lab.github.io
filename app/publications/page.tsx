@@ -2,6 +2,7 @@ import { CollectionPage } from '@/components/PageFrame';
 import PublicationsBrowser from '@/components/PublicationsBrowser';
 import StructuredData from '@/components/StructuredData';
 import { publicationTopics } from '@/data/publicationTopics';
+import { venueAliases } from '@/data/publicationVenues';
 import { alumni, currentMembers, getPlainName, getPublicationNames, type Person } from '@/lib/people';
 import { buildPublicationIndex } from '@/lib/publications';
 import { canonicalUrl, createPageMetadata, organizationId, siteName } from '@/lib/site';
@@ -17,10 +18,14 @@ export const metadata = createPageMetadata({
 
 const toMemberNames = (person: Person) => ({ name: getPlainName(person), publicationNames: getPublicationNames(person) });
 
-const { records, topicOptions, memberOptions } = buildPublicationIndex(publicationTopics, [
-  { label: 'Current members', members: currentMembers.map(toMemberNames) },
-  { label: 'Alumni', members: alumni.map(toMemberNames) },
-]);
+const { records, topicOptions, memberOptions, venueOptions } = buildPublicationIndex(
+  publicationTopics,
+  [
+    { label: 'Current members', members: currentMembers.map(toMemberNames) },
+    { label: 'Alumni', members: alumni.map(toMemberNames) },
+  ],
+  venueAliases,
+);
 
 export default function PublicationsPage() {
   return (
@@ -36,7 +41,12 @@ export default function PublicationsPage() {
         }}
       />
       {/* The full list is rendered into the static HTML; filtering happens in the browser. */}
-      <PublicationsBrowser records={records} topicOptions={topicOptions} memberOptions={memberOptions} />
+      <PublicationsBrowser
+        records={records}
+        topicOptions={topicOptions}
+        memberOptions={memberOptions}
+        venueOptions={venueOptions}
+      />
     </CollectionPage>
   );
 }
