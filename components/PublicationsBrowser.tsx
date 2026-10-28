@@ -49,7 +49,6 @@ const CheckboxList = ({ options, selected, counts, onToggle }: CheckboxListProps
               className="h-4 w-4 shrink-0 rounded border-border-strong accent-accent"
             />
             <span className="min-w-0 flex-1 leading-5">{option.name}</span>
-            <span className="font-mono text-sm tabular-nums text-muted">{count}</span>
           </label>
         </li>
       );
@@ -114,7 +113,8 @@ export default function PublicationsBrowser({ records, topicOptions, memberOptio
 
   const filteredRecords = useMemo(() => records.filter((record) => matches(record)), [records, matches]);
 
-  // Each option shows how many results it would give alongside the other groups' choices.
+  // How many results each option would give alongside the other groups' choices;
+  // options that would give none are greyed out.
   const counts = useMemo(() => {
     const result = {} as Record<FilterKey, Map<string, number>>;
     FILTER_KEYS.forEach((key) => {
@@ -166,8 +166,9 @@ export default function PublicationsBrowser({ records, topicOptions, memberOptio
   };
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12">
-      <aside aria-label="Filter publications" className="lg:sticky lg:top-20 lg:self-start">
+    <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-12">
+      {/* First in the page so the Filters button sits above the search on phones; shown on the right on wide screens. */}
+      <aside aria-label="Filter publications" className="lg:sticky lg:top-20 lg:order-last lg:self-start">
         <button
           type="button"
           onClick={handlePanelToggle}
@@ -210,7 +211,7 @@ export default function PublicationsBrowser({ records, topicOptions, memberOptio
                 aria-expanded={showAllVenues}
                 className="mt-2 inline-flex min-h-11 items-center px-1 text-sm font-medium text-accent transition-colors hover:text-accent-hover lg:min-h-9"
               >
-                {showAllVenues ? 'Show fewer venues' : `Show all ${venueOptions.length} venues`}
+                {showAllVenues ? 'Show fewer venues' : 'Show all venues'}
               </button>
             ) : null}
           </FilterGroup>
