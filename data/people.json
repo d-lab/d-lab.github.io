@@ -7,11 +7,6 @@
     "website": "https://www.gianlucademartini.net/"
   },
   {
-    "name": "Andrea Paganelli",
-    "role": "Alumni",
-    "image": "/images/people/Andrea_Paganelli_dlab.jpg"
-  },
-  {
     "name": "Bing Tuo",
     "role": "PhD Student",
     "image": "/images/people/Bing_Tuo_dlab.jpg",
@@ -54,12 +49,6 @@
     "website": "https://stefanocivelli.com/"
   },
   {
-    "name": "Shangqian Li",
-    "role": "Alumni",
-    "image": "/images/people/Shangqian_Li_dlab.jpg",
-    "website": "https://au.linkedin.com/in/shangqianl"
-  },
-  {
     "name": "Lei Han",
     "role": "Alumni",
     "isAlumni": true,
@@ -81,6 +70,12 @@
     "website": "https://au.linkedin.com/in/jiechenxu014"
   },
   {
+    "name": "Shangqian Li",
+    "role": "Alumni",
+    "image": "/images/people/Shangqian_Li_dlab.jpg",
+    "website": "https://au.linkedin.com/in/shangqianl"
+  },
+  {
     "name": "Shaoyang Fan",
     "role": "Alumni",
     "isAlumni": true,
@@ -94,6 +89,11 @@
     "image": "/images/people/linh.jpeg",
     "publicationNames": ["Linh Le"],
     "website": "https://scholar.google.com/citations?user=zlYcKiAAAAAJ&hl=en"
+  },
+  {
+    "name": "Andrea Paganelli",
+    "role": "Alumni",
+    "image": "/images/people/Andrea_Paganelli_dlab.jpg"
   },
   {
     "name": "Shaochen Yu",
