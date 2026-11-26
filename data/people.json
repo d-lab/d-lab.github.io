@@ -8,13 +8,14 @@
   },
   {
     "name": "Andrea Paganelli",
-    "role": "Master Thesis Student",
+    "role": "Alumni",
     "image": "/images/people/Andrea_Paganelli_dlab.jpg"
   },
   {
     "name": "Bing Tuo",
     "role": "PhD Student",
-    "image": "/images/people/Bing_Tuo_dlab.jpg"
+    "image": "/images/people/Bing_Tuo_dlab.jpg",
+    "website": "https://au.linkedin.com/in/bing-tuo-36763349"
   },
   {
     "name": "Elyas Meguellati",
@@ -31,7 +32,8 @@
   {
     "name": "Hongliang Ni",
     "role": "PhD Student",
-    "image": "/images/people/Hongliang_Ni_dlab.jpg"
+    "image": "/images/people/Hongliang_Ni_dlab.jpg",
+    "website": "https://hk.linkedin.com/in/hongliang-ni-1931181b0"
   },
   {
     "name": "Pietro Bernardelle",
@@ -42,7 +44,8 @@
   {
     "name": "Samaneh Mohtadi",
     "role": "PhD Student",
-    "image": "/images/people/Samaneh_Mohtadi_dlab.jpg"
+    "image": "/images/people/Samaneh_Mohtadi_dlab.jpg",
+    "website": "https://au.linkedin.com/in/samaneh-mohtadi"
   },
   {
     "name": "Stefano Civelli",
@@ -52,7 +55,7 @@
   },
   {
     "name": "Shangqian Li",
-    "role": "PhD Student",
+    "role": "Alumni",
     "image": "/images/people/Shangqian_Li_dlab.jpg",
     "website": "https://au.linkedin.com/in/shangqianl"
   },
