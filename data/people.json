@@ -71,7 +71,8 @@
   },
   {
     "name": "Shangqian Li",
-    "role": "Alumni",
+    "role": "Alumni (PhD 2026)",
+    "isAlumni": true,
     "image": "/images/people/Shangqian_Li_dlab.jpg",
     "website": "https://au.linkedin.com/in/shangqianl"
   },
@@ -93,6 +94,7 @@
   {
     "name": "Andrea Paganelli",
     "role": "Alumni",
+    "isAlumni": true,
     "image": "/images/people/Andrea_Paganelli_dlab.jpg"
   },
   {
